@@ -1,0 +1,801 @@
+customer_age,monthly_charges,total_charges,tenure_months,contract_type,payment_method,internet_service,online_security,tech_support,support_tickets,churned
+28,66.97082991779477,3269.4153458485584,9,Month-to-month,Electronic check,Fiber optic,No,Yes,3,1
+59,20.0,421.4067714697239,14,Month-to-month,Bank transfer,Fiber optic,No,No,1,0
+49,46.98383643466585,2299.6891300142765,13,Month-to-month,Electronic check,Fiber optic,No,Yes,3,1
+22,74.20585856058581,949.7685079901955,2,Month-to-month,Electronic check,No,No,No,3,1
+36,37.002711016002245,1635.8957998963992,25,Month-to-month,Mailed check,DSL,No,No,1,0
+69,101.66073246664615,802.2910654910553,43,One year,Credit card,DSL,No,No,6,0
+18,82.37952221964966,4079.494636160849,18,Month-to-month,Electronic check,DSL,No,Yes,4,0
+38,57.14399023222323,2325.1894660794487,3,Month-to-month,Electronic check,DSL,No,No,4,1
+63,64.4926883674984,3707.1525995867237,15,Two year,Electronic check,DSL,Yes,Yes,1,0
+31,116.53910309579545,319.52749345425696,1,Month-to-month,Electronic check,DSL,No,No,4,1
+34,93.39971127190793,820.0090155034584,57,One year,Electronic check,Fiber optic,No,No,4,0
+43,79.50547862165429,207.44589147792794,6,One year,Electronic check,DSL,No,Yes,1,0
+67,34.612030739143094,68.81792576112859,55,Month-to-month,Bank transfer,No,No,Yes,1,0
+35,110.74028296614895,5638.575542965504,21,Month-to-month,Bank transfer,DSL,No,No,0,1
+38,96.31002672184945,3684.2513825964843,72,Month-to-month,Electronic check,DSL,Yes,Yes,2,1
+38,66.28986531100323,2584.1163638377107,45,Month-to-month,Mailed check,DSL,No,No,1,0
+78,56.257548269780386,1304.6987967352773,1,Month-to-month,Mailed check,Fiber optic,No,No,3,0
+77,65.30240153058068,270.6508717394608,1,Two year,Credit card,No,No,Yes,2,0
+60,39.95158297832565,1056.321671107715,32,One year,Mailed check,No,No,No,1,0
+50,58.230361057316486,598.8793936660426,17,Two year,Credit card,DSL,Yes,No,4,0
+56,89.07901285386289,5000.995481136243,33,Month-to-month,Credit card,DSL,No,No,3,1
+67,24.8094680689357,1310.787266976583,21,Month-to-month,Mailed check,Fiber optic,No,No,1,0
+30,62.14814064394314,1165.540629846916,6,Month-to-month,Electronic check,Fiber optic,No,No,0,0
+62,72.84389932199593,147.31413117918245,37,Two year,Bank transfer,Fiber optic,No,No,4,0
+26,72.58920093308322,162.20880606599457,1,Month-to-month,Bank transfer,Fiber optic,No,No,1,1
+35,40.526576149164356,1305.0161074335049,39,Month-to-month,Electronic check,DSL,No,No,4,0
+58,40.446177716823485,2004.7607149682742,26,Month-to-month,Credit card,No,No,No,1,0
+23,97.2291345614596,2060.9688294613875,26,One year,Electronic check,Fiber optic,No,No,2,0
+42,39.386772679592724,1567.170603857639,1,Month-to-month,Electronic check,Fiber optic,No,No,2,1
+32,95.21627390771091,4915.156830313319,5,One year,Electronic check,Fiber optic,Yes,Yes,3,1
+41,57.94086712228771,2232.8756359696886,16,Month-to-month,Bank transfer,Fiber optic,No,No,2,0
+18,96.99490875752339,132.07314284329692,14,One year,Electronic check,Fiber optic,No,No,0,1
+18,59.47303736487465,1993.3756696806236,1,Month-to-month,Electronic check,DSL,No,No,0,0
+34,40.83821698459237,462.1303227202218,9,One year,Credit card,No,No,No,0,0
+58,91.41387140983655,4406.492981113426,72,One year,Electronic check,DSL,No,No,2,0
+42,69.56521944424507,1762.0851405125588,8,Two year,Mailed check,Fiber optic,No,No,2,0
+45,106.21441463311129,2858.5244164441806,24,One year,Electronic check,No,No,Yes,1,0
+55,92.30500212844595,1747.3937890832108,27,Two year,Mailed check,Fiber optic,No,Yes,2,0
+31,64.2643342764051,934.6455684353124,23,Two year,Bank transfer,DSL,No,Yes,1,0
+49,58.758309958425656,613.2789157824353,8,Two year,Mailed check,Fiber optic,No,No,2,0
+32,70.58430858218121,1768.3393009437511,20,Month-to-month,Bank transfer,DSL,No,No,1,0
+19,74.75525044647974,2445.795498235295,29,Two year,Electronic check,DSL,No,No,3,0
+39,47.95628683170479,2597.093471762075,11,Month-to-month,Bank transfer,DSL,No,Yes,2,0
+53,91.04848932561441,2250.247875072823,7,Month-to-month,Electronic check,No,No,No,2,1
+50,60.065912704740064,1200.3237454943287,7,Two year,Electronic check,DSL,Yes,No,4,1
+44,59.42430637116719,2927.9730357615895,60,Two year,Credit card,Fiber optic,No,No,2,0
+80,56.48279156568743,2376.53150431886,24,Month-to-month,Electronic check,Fiber optic,No,No,2,0
+51,75.77543168358429,588.9469649409551,33,One year,Electronic check,DSL,No,No,1,0
+59,52.69868495697862,2251.953076677638,20,Month-to-month,Mailed check,DSL,No,Yes,2,0
+78,73.37425274975736,4191.205066892049,23,Month-to-month,Mailed check,DSL,No,No,1,0
+25,139.16507677754677,4221.6146951802775,7,Month-to-month,Electronic check,DSL,No,No,2,1
+29,68.65976349821645,2055.986338933465,53,Month-to-month,Electronic check,Fiber optic,Yes,No,1,0
+71,59.14988154253379,2584.312286144136,16,Two year,Electronic check,DSL,No,No,1,0
+33,28.307769296302475,362.10061110471446,39,Two year,Bank transfer,Fiber optic,No,No,0,0
+45,71.25554811910173,1614.1687958509876,17,Month-to-month,Electronic check,Fiber optic,No,Yes,3,0
+61,42.26922641875984,832.6341850421485,2,Month-to-month,Electronic check,Fiber optic,No,No,0,0
+58,60.61104702571068,3621.9410520108477,2,Month-to-month,Electronic check,No,No,No,1,1
+71,73.79018984117857,777.4146597505561,14,Month-to-month,Credit card,Fiber optic,Yes,Yes,1,1
+67,26.725263754446203,301.0149411378991,13,Month-to-month,Credit card,DSL,Yes,Yes,2,1
+61,73.93656880996146,2084.530714393633,58,Month-to-month,Credit card,No,No,Yes,2,0
+33,77.61287938565111,1333.7309203220582,3,One year,Credit card,Fiber optic,No,No,1,0
+56,37.57249950833371,1967.6704257551714,27,Month-to-month,Electronic check,DSL,No,No,1,0
+49,60.19227019677281,1610.2694402378188,60,Month-to-month,Credit card,DSL,No,No,0,0
+25,24.233340945554886,1003.4765866769386,12,One year,Electronic check,Fiber optic,Yes,No,2,0
+66,109.38752339606015,5389.957284792119,51,Two year,Credit card,DSL,No,Yes,2,0
+57,78.26408191372111,1334.458324545096,3,Month-to-month,Credit card,No,Yes,No,2,0
+45,65.51028747552245,2897.6193575588873,2,One year,Bank transfer,Fiber optic,No,Yes,0,0
+41,65.91410423359594,1617.9759183024303,6,Month-to-month,Credit card,DSL,No,No,1,0
+27,98.2860902016442,1574.2134521442624,17,Two year,Mailed check,DSL,No,Yes,8,0
+47,67.64586120198473,3620.1643296735483,24,Month-to-month,Mailed check,Fiber optic,No,Yes,2,1
+52,78.27041928189382,2687.575438326114,35,One year,Credit card,DSL,Yes,No,2,0
+32,107.96573900913737,3269.587576975266,34,One year,Mailed check,No,No,No,3,0
+62,61.345821299945044,715.0209502519474,2,Month-to-month,Electronic check,No,No,No,1,1
+28,42.6841168873317,2313.342402386029,49,Month-to-month,Electronic check,DSL,No,No,0,1
+18,49.38748563115948,1907.9707027731436,2,One year,Bank transfer,DSL,No,No,4,0
+60,105.71659586098247,6016.309908676542,54,Two year,Mailed check,DSL,No,No,2,0
+38,72.28570771285143,261.33555132338114,72,Two year,Bank transfer,Fiber optic,No,No,1,0
+43,57.44171779325814,452.68987268273685,21,Month-to-month,Mailed check,Fiber optic,No,No,2,0
+32,94.34110949497898,4977.803892978752,28,One year,Electronic check,No,Yes,No,3,0
+20,94.94893464192901,2625.725976597285,11,Month-to-month,Bank transfer,DSL,No,No,2,1
+63,58.10880580233903,1659.1053714792456,19,Month-to-month,Credit card,No,Yes,No,3,1
+34,45.70157907286374,647.755322649035,42,One year,Mailed check,DSL,No,Yes,3,0
+69,30.736784973469746,916.4856859832933,4,Month-to-month,Credit card,DSL,No,No,4,1
+57,25.152776976844073,675.9269845599273,16,Month-to-month,Credit card,DSL,No,No,1,0
+40,63.375338703850076,2758.7650644059604,12,Two year,Electronic check,Fiber optic,No,Yes,2,0
+28,47.67010132408018,1834.9929581838965,48,Month-to-month,Mailed check,DSL,No,Yes,5,0
+34,116.46186024515464,5606.488753817024,3,Month-to-month,Electronic check,Fiber optic,Yes,No,2,1
+26,71.4634438673756,3373.2885648830948,53,Month-to-month,Mailed check,No,Yes,Yes,3,0
+76,21.446261418720994,554.8049519812159,6,Two year,Electronic check,Fiber optic,Yes,No,3,1
+47,105.46823188775156,1981.4910610852899,22,Two year,Mailed check,Fiber optic,No,No,3,0
+62,74.04275773543989,1501.6468827727476,11,One year,Electronic check,No,No,No,1,0
+25,87.62448700932764,5205.464103887559,64,Month-to-month,Bank transfer,No,No,No,0,1
+47,87.05086942083526,2188.8675095404137,5,One year,Mailed check,Fiber optic,No,Yes,2,0
+62,77.41391418216348,3527.946995897089,16,Month-to-month,Bank transfer,Fiber optic,No,No,5,1
+39,83.08356576086359,488.67953087003707,6,Month-to-month,Electronic check,DSL,No,No,0,0
+60,75.96901679324263,2001.3533706124906,38,One year,Electronic check,No,No,No,3,0
+28,42.34035235086407,863.888565778449,7,One year,Electronic check,Fiber optic,No,Yes,0,0
+24,79.16830495356186,827.5131718927347,72,Month-to-month,Bank transfer,DSL,No,No,0,0
+50,95.5976376248135,230.25060439656355,61,Month-to-month,Mailed check,Fiber optic,Yes,Yes,5,1
+39,64.74858968385455,1027.234266712996,15,Two year,Bank transfer,DSL,No,No,3,0
+54,83.78255545174389,4005.3069527644207,1,Month-to-month,Electronic check,Fiber optic,Yes,No,2,1
+18,80.48972862995154,1493.246441460957,72,Two year,Credit card,Fiber optic,No,No,2,0
+55,115.39130159797767,6058.970379668407,27,One year,Bank transfer,DSL,No,No,0,0
+80,63.68124248250599,2238.5239018508614,16,Month-to-month,Mailed check,DSL,No,Yes,4,1
+44,62.69989593074396,3039.6536934416417,22,One year,Electronic check,Fiber optic,No,No,1,0
+45,67.07670649633125,4022.079832010772,2,One year,Mailed check,DSL,No,No,2,0
+47,67.44022312240774,2616.224129394269,4,Month-to-month,Credit card,Fiber optic,No,No,1,1
+18,20.0,422.2379370939283,24,One year,Electronic check,No,No,No,3,0
+51,53.934753963335716,1040.4791872785497,1,Month-to-month,Credit card,DSL,No,Yes,1,0
+20,77.49712666364434,4524.946480039743,29,One year,Credit card,DSL,No,No,3,0
+38,69.79358713330366,3012.2550842878613,60,Month-to-month,Bank transfer,DSL,Yes,Yes,2,0
+63,50.01652114507168,1532.890055169759,29,One year,Electronic check,Fiber optic,No,No,1,0
+33,53.38051869561548,727.6028193571357,19,Two year,Electronic check,Fiber optic,No,No,0,0
+52,61.10967179257602,1827.41380775453,37,Month-to-month,Mailed check,No,No,No,1,0
+60,49.96070547993949,2296.506547978148,33,Two year,Mailed check,Fiber optic,No,No,2,0
+49,57.17373473891499,3345.1374048190837,21,One year,Electronic check,No,No,No,2,0
+24,56.51524701303664,2299.932016997499,5,Month-to-month,Electronic check,Fiber optic,No,No,2,0
+40,92.38427116517943,226.6657384612263,1,Month-to-month,Bank transfer,No,No,Yes,2,0
+74,95.40978171352691,2713.957417765396,14,One year,Mailed check,Fiber optic,No,Yes,0,0
+18,93.33962735986682,4651.389505914069,6,One year,Electronic check,Fiber optic,No,Yes,1,1
+40,80.66754497938045,2510.416743287452,6,One year,Credit card,Fiber optic,Yes,No,0,1
+36,52.2919378896613,1113.9405021189007,16,Month-to-month,Electronic check,No,No,Yes,1,0
+46,93.99576124984327,4869.4683708863695,11,Month-to-month,Electronic check,Fiber optic,No,No,2,1
+56,62.14373533701425,2179.873054680446,16,Month-to-month,Electronic check,No,No,No,3,1
+69,70.57630520648675,2170.862484382419,7,Month-to-month,Credit card,DSL,No,No,2,1
+40,103.45551329826472,3071.69530048356,22,Month-to-month,Electronic check,Fiber optic,No,No,3,0
+57,72.099821403291,2971.1001950112745,23,Month-to-month,Credit card,Fiber optic,No,No,2,0
+52,76.18210075594047,2122.5615320298516,5,One year,Electronic check,Fiber optic,No,No,2,1
+52,34.680512850085265,1195.0929037199182,20,Month-to-month,Mailed check,Fiber optic,Yes,Yes,3,0
+36,82.17523234417133,1480.9960341713745,14,One year,Electronic check,Fiber optic,No,No,5,0
+30,45.499833817437974,506.8707195621124,72,One year,Electronic check,No,Yes,No,4,0
+28,95.29849140919755,4706.139138785646,30,Two year,Bank transfer,No,No,No,4,0
+33,65.38502057067873,1296.7586155544745,4,Month-to-month,Bank transfer,DSL,No,No,3,0
+49,20.0,168.28421913863343,51,One year,Electronic check,DSL,No,Yes,4,0
+56,61.04949743591645,724.7466593280458,15,Two year,Electronic check,DSL,No,No,2,0
+49,64.29913654285207,1629.7939691356587,45,Month-to-month,Electronic check,DSL,No,No,4,1
+36,82.13688065195231,1465.3372473877755,42,Month-to-month,Credit card,No,No,No,4,0
+72,86.76280976617917,3644.8953079292864,1,Month-to-month,Electronic check,No,Yes,Yes,1,1
+67,61.80589388197029,1337.7361394221425,6,Month-to-month,Mailed check,DSL,Yes,No,1,1
+39,95.32170487134687,3390.1308507988847,58,One year,Credit card,Fiber optic,No,No,2,0
+32,20.0,217.19046782567122,35,Two year,Credit card,No,No,No,2,0
+46,52.15027504936927,472.4044858718196,3,One year,Mailed check,DSL,No,Yes,2,0
+64,42.19089322907034,2298.236400214372,5,One year,Electronic check,Fiber optic,No,No,1,0
+49,38.645412235376966,2009.9704924721298,23,Month-to-month,Mailed check,Fiber optic,No,No,2,0
+53,93.99265928368777,5072.437641754564,7,Month-to-month,Electronic check,No,No,No,2,0
+41,90.72925997562123,2732.0780968078498,5,Month-to-month,Credit card,Fiber optic,Yes,No,2,1
+51,50.605749489744454,260.91243205846,72,Month-to-month,Electronic check,Fiber optic,No,Yes,1,1
+68,99.451425098999,1919.5163623662827,14,One year,Electronic check,Fiber optic,No,Yes,3,0
+41,72.53667231131045,3844.640762618246,17,One year,Electronic check,DSL,No,No,1,0
+47,59.457897480621185,1541.609272974754,25,Two year,Credit card,Fiber optic,No,No,0,0
+48,52.676930090689076,1068.560759685585,1,Two year,Electronic check,DSL,No,Yes,1,0
+49,50.543206838422684,931.7294426245525,12,Two year,Electronic check,Fiber optic,No,No,1,0
+23,81.81937143623837,2734.1714407025565,56,Month-to-month,Electronic check,DSL,No,No,1,1
+18,86.25387252417505,2387.882864182132,68,One year,Bank transfer,DSL,No,No,4,0
+29,75.96253030469774,1756.1387820395612,16,Month-to-month,Credit card,Fiber optic,No,No,1,1
+47,20.0,519.1913985013164,53,One year,Electronic check,Fiber optic,Yes,No,2,0
+53,77.40896640132262,1295.301050249764,16,One year,Electronic check,DSL,Yes,Yes,1,0
+37,84.13491410097015,1036.3357638294005,72,Two year,Bank transfer,No,No,Yes,2,0
+65,53.269859863388774,687.6633622846268,37,Month-to-month,Mailed check,Fiber optic,No,Yes,0,0
+42,71.08126357245884,231.8898494691651,42,Month-to-month,Electronic check,Fiber optic,No,No,2,1
+45,23.402892517481312,1329.0650317163477,4,One year,Mailed check,Fiber optic,No,No,1,0
+42,39.250773458005675,2254.31851666756,1,Month-to-month,Electronic check,DSL,No,No,2,0
+47,61.894116293986826,437.60806704077663,16,Month-to-month,Credit card,Fiber optic,No,No,3,1
+55,62.256221399597344,333.38003091694816,72,One year,Credit card,DSL,Yes,No,2,0
+54,78.79198429374004,2013.9018479806707,72,Two year,Credit card,DSL,Yes,No,1,0
+31,40.32686533676475,1857.9686171830879,22,Month-to-month,Credit card,Fiber optic,No,No,4,0
+67,61.46984838448317,3057.2718895741937,4,One year,Electronic check,Fiber optic,No,No,2,0
+28,57.75550548966478,130.64250356158962,1,One year,Electronic check,Fiber optic,No,No,2,1
+46,83.2002618494802,1473.8793488426195,16,Two year,Bank transfer,Fiber optic,Yes,No,4,0
+40,105.52606920920829,3438.363133174542,8,Month-to-month,Electronic check,Fiber optic,No,No,1,1
+29,113.02300799525187,1013.8889143913833,9,One year,Mailed check,Fiber optic,No,Yes,2,1
+43,30.788998829216062,1792.8249599460353,42,One year,Electronic check,Fiber optic,No,No,4,0
+33,68.79964520623857,1088.8502930823208,2,Month-to-month,Electronic check,DSL,No,No,0,1
+46,42.186767243880865,1364.782724441706,2,Two year,Electronic check,No,Yes,No,3,0
+51,68.381376212844,510.7794791200325,14,Month-to-month,Credit card,DSL,Yes,No,5,1
+67,80.57298199039873,1691.6663248467537,12,One year,Credit card,Fiber optic,Yes,No,5,0
+49,72.0372724675853,595.2846238226366,1,Month-to-month,Mailed check,Fiber optic,No,Yes,4,1
+35,68.77470753013849,3768.7826540609126,18,Two year,Bank transfer,Fiber optic,Yes,No,0,0
+39,107.07597936913254,6107.810157918618,13,Two year,Electronic check,Fiber optic,No,No,2,0
+47,88.02473479259771,2899.3509354197813,72,Month-to-month,Credit card,No,No,No,0,0
+46,63.18363846155541,1367.3592550071085,1,Two year,Mailed check,DSL,No,No,2,0
+66,70.60528402238234,1418.1780098046513,2,One year,Bank transfer,DSL,Yes,No,4,1
+65,91.77244516973498,5093.0964151943845,4,Month-to-month,Mailed check,DSL,No,No,4,1
+39,85.24476265098197,3200.1696477404216,9,Two year,Bank transfer,DSL,No,Yes,0,1
+36,59.37309740747946,1494.1809976815764,26,One year,Bank transfer,DSL,No,No,4,1
+18,25.618928972410764,1191.8267994545515,72,One year,Credit card,No,No,No,1,0
+36,40.38356268068276,1315.7806694332728,57,Month-to-month,Mailed check,Fiber optic,No,Yes,1,0
+30,73.64948062533787,1020.8081184278444,14,Two year,Electronic check,Fiber optic,Yes,No,1,1
+39,25.336828683024862,381.85047228110875,1,Month-to-month,Bank transfer,Fiber optic,No,No,1,0
+50,66.19013754958931,1140.9193854202051,24,Month-to-month,Electronic check,DSL,No,No,5,1
+47,58.66077059531178,114.06282286294476,12,Two year,Electronic check,DSL,No,No,3,0
+44,94.98132007618008,1528.5340889796241,1,Two year,Mailed check,No,No,No,0,0
+47,37.04890441311361,1373.347660216081,40,Month-to-month,Mailed check,DSL,No,Yes,5,1
+43,21.705775527475282,986.5207616555176,18,One year,Electronic check,DSL,Yes,No,1,0
+47,59.5089814597473,457.7671493041918,13,Month-to-month,Mailed check,DSL,Yes,No,2,0
+18,85.86907828983806,5011.533330283223,30,Month-to-month,Bank transfer,Fiber optic,Yes,No,6,1
+40,96.7479649731838,2886.594533160906,46,Two year,Credit card,No,Yes,No,3,0
+43,47.266824586001434,220.84393510556183,64,One year,Mailed check,DSL,No,No,2,0
+39,81.75659368990465,4615.863089749037,9,Month-to-month,Electronic check,Fiber optic,No,Yes,0,0
+41,42.214238805941136,718.8530076052991,4,Month-to-month,Mailed check,Fiber optic,No,No,5,1
+55,51.279313360763695,988.3085810168499,9,Month-to-month,Credit card,DSL,Yes,No,3,0
+36,84.18986815069412,2365.8542569506044,72,Month-to-month,Bank transfer,Fiber optic,No,Yes,1,1
+78,87.95376356379609,1771.2098548090323,2,Two year,Credit card,No,No,Yes,5,1
+55,45.015481268162034,516.9131816537482,72,Month-to-month,Electronic check,DSL,Yes,No,3,1
+44,81.87245807342461,695.9649685093838,23,One year,Mailed check,Fiber optic,No,No,0,0
+41,23.287504668736254,723.5757815754248,1,One year,Mailed check,Fiber optic,Yes,Yes,0,1
+43,64.93352732086115,335.13973187055524,47,One year,Credit card,DSL,Yes,No,1,0
+31,41.643799343041465,1785.6951042406683,27,Two year,Electronic check,Fiber optic,Yes,No,1,0
+43,49.80751649507121,1054.4893724883975,3,Two year,Bank transfer,Fiber optic,No,No,1,0
+49,38.09806619639126,2269.3046825170723,10,Two year,Mailed check,DSL,No,No,3,0
+53,83.84065988347461,394.75121794572357,49,Month-to-month,Electronic check,Fiber optic,Yes,No,3,1
+53,83.84686176079668,324.12964433517607,31,Two year,Mailed check,DSL,No,Yes,1,0
+40,52.71998886668056,835.9667975353691,9,Two year,Credit card,DSL,Yes,No,1,0
+23,79.38955766108997,1726.3303635057418,37,Month-to-month,Mailed check,Fiber optic,No,No,1,1
+34,76.53181382838439,3748.647147083194,7,One year,Electronic check,DSL,Yes,No,2,1
+69,66.78870614166394,3336.1464421852597,19,Month-to-month,Electronic check,DSL,Yes,No,1,0
+58,123.95425498958944,5415.755774187611,65,Month-to-month,Mailed check,Fiber optic,No,No,1,0
+50,48.9780345715035,2435.0852098144887,13,Two year,Bank transfer,DSL,No,No,1,0
+33,70.35762726782842,3093.781801780142,19,Month-to-month,Credit card,Fiber optic,Yes,No,3,0
+45,60.440324267611025,3173.5526092764694,35,Month-to-month,Electronic check,DSL,No,No,0,0
+26,60.70549963423946,1724.4173582989827,5,Month-to-month,Electronic check,No,No,No,0,1
+36,73.98530010228698,1280.6746017367166,14,Month-to-month,Electronic check,DSL,No,Yes,2,1
+41,62.64010749525889,2388.970970364216,60,Two year,Bank transfer,DSL,No,Yes,0,0
+39,48.48933099769405,1091.4739079995418,25,Month-to-month,Bank transfer,Fiber optic,No,No,4,0
+59,73.10568744899328,364.86667232352465,29,One year,Bank transfer,No,Yes,No,0,0
+23,99.55829116884964,5126.68758222171,72,One year,Credit card,DSL,No,No,1,1
+32,93.5691594994625,4698.26273584387,21,Month-to-month,Mailed check,Fiber optic,No,No,0,1
+24,75.07611221021777,2273.488710016612,49,Month-to-month,Electronic check,DSL,Yes,No,2,1
+26,51.615079655026776,1470.76913387691,72,Month-to-month,Electronic check,Fiber optic,Yes,No,2,0
+46,74.66074000998674,598.2693038772805,27,Month-to-month,Electronic check,Fiber optic,No,Yes,1,0
+20,97.11607558364847,818.4899545566108,27,Month-to-month,Credit card,No,No,No,1,0
+56,99.77973155817467,4796.187799253669,4,Month-to-month,Credit card,DSL,No,No,2,1
+41,78.9921764891599,4059.138244609119,14,One year,Bank transfer,DSL,No,No,1,0
+46,60.891069995844546,81.30235640604754,32,Month-to-month,Credit card,Fiber optic,Yes,No,3,1
+49,64.93118126417822,3068.010299704845,10,Month-to-month,Credit card,DSL,Yes,No,1,1
+38,89.30114818346262,2913.203520462641,2,Month-to-month,Credit card,DSL,No,Yes,2,0
+60,87.15865537178126,2336.1765835936058,1,Month-to-month,Electronic check,No,No,No,2,0
+42,26.057509696550404,757.0768581844991,26,Two year,Electronic check,No,No,No,3,1
+53,86.46543911980693,3724.060161277378,1,Two year,Mailed check,DSL,No,Yes,2,0
+42,87.7822085007382,100.16147748558375,16,Month-to-month,Bank transfer,DSL,Yes,No,4,1
+49,47.82021437486817,224.70047317484173,51,One year,Mailed check,DSL,Yes,Yes,1,0
+49,50.87547209440797,2576.2716632002634,41,One year,Credit card,Fiber optic,No,No,1,0
+48,51.07089754705911,3057.1761521020335,30,Month-to-month,Bank transfer,Fiber optic,Yes,Yes,0,0
+30,52.99342993692882,808.3353512614797,47,One year,Mailed check,DSL,No,No,0,0
+51,34.581260320144146,850.9386108175875,33,One year,Bank transfer,Fiber optic,No,No,1,0
+40,77.82729823879868,3301.0386076571867,1,Month-to-month,Mailed check,Fiber optic,Yes,No,1,0
+54,50.357015030812235,2025.471767535036,15,One year,Credit card,No,No,No,2,0
+18,68.24040409771776,3223.6954122173242,1,One year,Mailed check,Fiber optic,No,Yes,1,0
+23,57.560780423775114,3161.9967121493796,19,Month-to-month,Electronic check,DSL,No,Yes,1,0
+50,76.37943803491724,1266.3815112466443,6,Month-to-month,Electronic check,DSL,No,Yes,2,0
+72,44.734574098201236,1435.865974947761,13,One year,Mailed check,Fiber optic,No,No,2,0
+57,76.13163437241165,707.1978158844561,5,Month-to-month,Mailed check,Fiber optic,No,No,2,1
+34,79.74452539859233,4644.988174179587,41,One year,Credit card,Fiber optic,No,Yes,1,0
+19,90.68986462996571,4143.309982438116,4,Month-to-month,Mailed check,Fiber optic,No,No,1,0
+56,119.19422723476643,1436.7317968770876,9,One year,Electronic check,Fiber optic,No,No,1,1
+43,20.0,893.0267083401632,1,Month-to-month,Mailed check,No,No,Yes,3,0
+53,78.00785835932841,3754.6112715856034,8,One year,Bank transfer,DSL,No,No,1,0
+46,52.2709289598315,473.0762104955429,1,Month-to-month,Electronic check,DSL,No,Yes,2,1
+45,21.873533177220985,666.1497645778875,14,One year,Credit card,DSL,No,Yes,2,0
+80,91.04076558266638,4510.297470889172,1,Two year,Electronic check,Fiber optic,No,No,2,0
+44,103.30499709737263,2219.3069560307317,11,Month-to-month,Bank transfer,Fiber optic,No,Yes,2,1
+42,60.20930723751856,239.5139112136237,22,Month-to-month,Electronic check,Fiber optic,No,No,2,0
+43,75.27290740555027,1603.3724867391438,57,Month-to-month,Bank transfer,DSL,No,Yes,2,0
+36,68.39808149592108,3224.0654409417994,19,Month-to-month,Bank transfer,DSL,Yes,Yes,3,1
+59,80.85494170232991,559.8046794070054,17,One year,Credit card,Fiber optic,No,No,3,0
+39,92.01339372308993,1776.2822834821477,1,One year,Electronic check,Fiber optic,No,No,0,0
+54,78.62343339233493,4038.211235789561,11,One year,Mailed check,Fiber optic,Yes,No,2,0
+49,78.64424823650397,830.0258610993607,12,One year,Bank transfer,Fiber optic,No,No,4,0
+63,101.49341357179085,2428.7848361901524,9,Month-to-month,Credit card,Fiber optic,No,Yes,4,1
+51,65.88344444558454,2220.0691324312934,52,Month-to-month,Electronic check,No,No,No,0,0
+26,93.07661428247374,1070.23345139605,12,Month-to-month,Bank transfer,No,Yes,No,0,0
+25,49.449989445212026,2093.6430116122115,5,Month-to-month,Mailed check,Fiber optic,No,Yes,4,1
+66,110.17712366791756,5189.023803316908,36,Month-to-month,Credit card,DSL,No,No,2,1
+35,88.44563480932264,3399.889060508015,40,Two year,Electronic check,DSL,No,No,4,0
+25,59.9060116527135,3105.9261400729206,10,One year,Electronic check,No,No,No,5,0
+34,20.0,174.22737453507898,41,Month-to-month,Mailed check,No,Yes,No,0,0
+63,69.99223207172125,83.59900591233514,29,Month-to-month,Bank transfer,No,No,No,2,1
+23,40.45476478073125,677.5961560289546,2,Month-to-month,Electronic check,DSL,No,Yes,5,1
+32,77.49086507949367,3918.1006007120627,11,One year,Bank transfer,Fiber optic,No,Yes,2,0
+34,106.27922057001189,902.4609082991288,45,Month-to-month,Mailed check,Fiber optic,Yes,Yes,0,1
+26,74.00149481991222,3409.0048804094836,11,One year,Electronic check,Fiber optic,Yes,No,0,1
+27,65.54968464188691,3659.5561273727076,48,One year,Bank transfer,DSL,Yes,Yes,1,0
+22,78.55513509989648,2677.5954106713475,14,Month-to-month,Mailed check,No,No,Yes,0,1
+38,77.14125490274688,4096.148212469349,19,Month-to-month,Electronic check,Fiber optic,No,No,1,0
+39,20.0,312.76336093058666,11,Month-to-month,Electronic check,Fiber optic,Yes,No,1,0
+34,76.02342160176282,3318.15514290749,22,Two year,Electronic check,Fiber optic,No,Yes,3,0
+20,85.50693390294241,4021.206828139618,17,Two year,Electronic check,No,No,Yes,1,0
+63,63.51645914268232,1890.3887508226335,44,One year,Credit card,DSL,No,No,0,0
+25,94.46397695351274,3453.8323737793553,72,One year,Bank transfer,Fiber optic,No,No,2,0
+49,66.80813563542509,417.2027952069694,8,Month-to-month,Bank transfer,DSL,No,Yes,0,1
+28,89.17496906201025,1543.07140451634,4,Month-to-month,Electronic check,No,Yes,Yes,3,1
+55,126.82762767655386,701.4669836368043,9,Two year,Bank transfer,DSL,No,No,2,1
+59,67.5902217743382,1022.4383767548961,29,Month-to-month,Credit card,Fiber optic,No,No,2,0
+31,21.446695852043824,1150.8669462438925,5,Month-to-month,Bank transfer,Fiber optic,No,No,1,1
+18,61.58520689810979,173.66459944917875,9,Two year,Credit card,No,No,No,1,1
+55,26.85274988024824,813.9869590587848,65,Month-to-month,Electronic check,No,No,Yes,4,0
+73,85.28094566100992,2715.1144913857875,33,Month-to-month,Mailed check,Fiber optic,No,No,1,0
+51,102.73377435082728,1834.884470467355,72,Month-to-month,Electronic check,DSL,Yes,Yes,3,1
+47,87.39699154293851,4117.777571888073,2,Month-to-month,Mailed check,DSL,Yes,Yes,1,1
+57,78.00770531865675,2791.356253113622,16,Month-to-month,Bank transfer,DSL,No,No,2,0
+56,53.87686356188106,674.5088522016562,56,Month-to-month,Electronic check,Fiber optic,No,Yes,2,1
+32,109.39124364916194,3150.4671366014177,13,One year,Credit card,Fiber optic,Yes,No,2,0
+35,88.83190529998296,211.30781490094788,28,Month-to-month,Bank transfer,Fiber optic,No,Yes,1,1
+54,77.11173891823876,158.57995818854894,4,One year,Bank transfer,No,No,No,3,1
+42,75.12150797616425,3332.2608356198,6,One year,Electronic check,DSL,Yes,No,1,1
+64,72.79068396625014,812.604242838329,13,One year,Electronic check,DSL,No,No,1,0
+34,81.30541059898526,4727.132765520197,9,Month-to-month,Electronic check,DSL,Yes,No,4,1
+56,54.666820523459904,1210.0177650749933,24,Month-to-month,Electronic check,DSL,No,No,2,1
+50,108.13124835008551,4565.760714605409,42,One year,Electronic check,DSL,No,No,0,0
+43,73.80849382184859,2087.7532776001167,10,Month-to-month,Bank transfer,Fiber optic,Yes,Yes,1,0
+62,85.00136126181252,2138.4874280551253,34,One year,Bank transfer,DSL,Yes,No,2,1
+55,59.16081805826434,2390.582481094432,7,One year,Electronic check,Fiber optic,Yes,No,1,1
+29,79.37296333933568,3011.2020268597835,12,Two year,Electronic check,DSL,No,Yes,3,0
+54,20.0,1054.6986110285955,1,Month-to-month,Electronic check,Fiber optic,No,Yes,3,1
+65,42.04252803854605,251.45044415764158,3,Two year,Bank transfer,Fiber optic,No,No,1,0
+43,69.21467117033843,2137.8149226717146,2,One year,Credit card,Fiber optic,No,No,0,1
+41,36.93817224858332,1361.2978569067986,20,One year,Mailed check,DSL,Yes,No,3,0
+34,130.9853515966292,5153.118428559825,23,Month-to-month,Electronic check,Fiber optic,No,Yes,3,1
+44,28.297967152265286,1072.5870012150096,1,Month-to-month,Electronic check,DSL,No,No,5,0
+55,78.64751872589844,1785.5174941272837,19,One year,Bank transfer,No,No,No,2,0
+32,111.3943288368542,315.6412167898152,33,Month-to-month,Bank transfer,Fiber optic,No,No,0,1
+24,82.03217648530212,3535.2822906522442,16,One year,Credit card,DSL,Yes,No,2,0
+39,62.24431116546564,223.2408446539008,14,One year,Credit card,Fiber optic,No,No,1,0
+24,56.19639790418037,1616.8911772416652,24,One year,Electronic check,Fiber optic,No,No,5,1
+52,86.8313872193161,3770.9368206232884,11,Month-to-month,Electronic check,No,No,No,4,1
+38,49.993232973936344,856.743241689479,22,One year,Electronic check,No,No,No,1,0
+18,67.01284725478114,176.92959649054802,62,One year,Mailed check,Fiber optic,No,No,2,0
+39,87.27996514295201,564.7457448200006,46,One year,Mailed check,No,No,No,2,0
+42,62.303024335592475,573.6400783515377,32,One year,Bank transfer,Fiber optic,Yes,Yes,1,0
+51,72.18775025471783,2904.891772415453,49,One year,Electronic check,Fiber optic,No,Yes,2,0
+42,62.39784268627474,2468.3526516107518,8,Month-to-month,Electronic check,DSL,Yes,No,1,0
+73,45.75505991232833,2686.988103253559,33,Two year,Bank transfer,Fiber optic,No,No,2,0
+37,99.7287621180536,2005.4246458324208,8,One year,Electronic check,Fiber optic,No,No,0,0
+44,104.82665601457481,917.3250314942158,17,Month-to-month,Credit card,Fiber optic,No,Yes,1,0
+43,62.08250115241611,694.0424838481455,16,Two year,Electronic check,Fiber optic,No,No,5,0
+40,63.36059603303545,183.59614536998063,1,Month-to-month,Electronic check,DSL,Yes,No,2,1
+47,65.5525165255032,3251.9829204879966,20,Month-to-month,Electronic check,Fiber optic,No,No,3,0
+53,83.47008184064454,458.514626671587,16,One year,Credit card,DSL,No,No,4,1
+65,47.36749336896176,2544.863349014774,17,Month-to-month,Electronic check,Fiber optic,No,No,0,0
+21,67.78686736118524,261.5081572901415,1,Month-to-month,Mailed check,No,No,Yes,2,0
+37,76.57397637922864,3751.0069184800554,11,One year,Mailed check,Fiber optic,Yes,No,1,1
+38,86.05105373468116,1079.9043612375629,13,Month-to-month,Credit card,DSL,No,Yes,2,0
+59,20.0,47.23808625319819,31,Month-to-month,Credit card,Fiber optic,No,Yes,1,0
+39,80.0850802392128,3394.9002809447584,31,Month-to-month,Credit card,Fiber optic,No,No,0,0
+18,78.64616904797708,90.94272942992211,11,Two year,Bank transfer,DSL,No,Yes,2,0
+46,95.19320591749084,1767.0258834177803,12,One year,Electronic check,DSL,No,Yes,3,0
+44,56.84339961948261,248.3186625946318,29,Month-to-month,Electronic check,No,No,No,3,1
+47,57.04116986827333,465.4924683109661,13,Month-to-month,Electronic check,DSL,No,No,1,0
+29,100.06291466674259,840.4501034372399,22,Month-to-month,Mailed check,Fiber optic,No,No,5,0
+70,30.92108234626977,1350.2689402853903,7,Month-to-month,Electronic check,DSL,No,Yes,0,1
+40,110.72725728453499,6461.7249596383,1,One year,Electronic check,DSL,No,No,2,1
+42,133.89736148069565,2066.118599882831,28,Month-to-month,Bank transfer,DSL,Yes,Yes,2,1
+31,81.93629211762213,2010.3450643075882,26,Two year,Mailed check,Fiber optic,No,Yes,2,0
+31,90.35246183941533,2086.1477431564904,2,Two year,Electronic check,No,No,No,2,0
+26,32.7604573225164,529.1152722261273,1,Month-to-month,Mailed check,Fiber optic,Yes,No,1,0
+39,52.636005332560686,2265.9549048996396,1,One year,Credit card,Fiber optic,No,Yes,3,1
+30,96.44656367930256,1640.3086438286587,3,One year,Electronic check,DSL,Yes,Yes,1,1
+75,79.04538367455585,2478.109316614333,5,One year,Bank transfer,DSL,No,Yes,0,0
+18,65.46431342433073,566.6110559414419,46,One year,Mailed check,DSL,No,Yes,1,0
+28,75.82172830848862,3869.1691227807487,13,Two year,Electronic check,Fiber optic,No,No,1,0
+38,82.67441210800666,3435.5341760630095,25,One year,Electronic check,Fiber optic,No,No,5,1
+55,62.672607472824154,2054.831589128541,72,One year,Electronic check,DSL,No,Yes,4,1
+38,69.27635137558153,2579.2308198342694,14,Month-to-month,Electronic check,DSL,No,No,3,0
+55,69.09231563002663,983.7237323253971,38,Month-to-month,Electronic check,Fiber optic,Yes,Yes,2,1
+30,43.69302546472652,2219.574858987519,11,Month-to-month,Mailed check,No,Yes,No,2,1
+45,78.08986569897753,642.0661229091778,32,Month-to-month,Electronic check,DSL,No,Yes,1,1
+71,115.08964786532727,6098.36942737414,7,Two year,Electronic check,Fiber optic,No,Yes,0,1
+30,113.29905325465481,4211.922748464196,52,Month-to-month,Mailed check,DSL,Yes,No,1,0
+51,33.09001760370603,1868.9863993718225,1,Month-to-month,Electronic check,Fiber optic,No,No,4,1
+48,84.26578049691844,1516.9204321346306,14,Month-to-month,Credit card,DSL,Yes,Yes,3,0
+18,86.88759452264432,4881.996390900961,72,One year,Mailed check,No,Yes,No,0,0
+36,59.73723842940896,2309.448137641522,3,Month-to-month,Mailed check,DSL,No,No,0,0
+61,45.89499913219014,72.94138626216308,2,Two year,Credit card,Fiber optic,No,No,6,0
+47,36.979642145708794,261.4673218778968,9,Two year,Bank transfer,Fiber optic,No,Yes,1,0
+26,58.88240552874922,2118.541050116908,3,Month-to-month,Electronic check,DSL,No,No,0,0
+55,78.75022841518032,520.5168735685762,27,Month-to-month,Mailed check,Fiber optic,Yes,Yes,3,0
+37,66.04854560581859,2980.4225005948297,22,Two year,Mailed check,No,No,Yes,3,0
+50,54.72667279342106,2224.4370705164474,17,Month-to-month,Electronic check,Fiber optic,Yes,No,0,1
+50,38.77108421622751,467.3139097594726,72,One year,Electronic check,DSL,No,No,2,0
+28,78.76790645970742,3038.756260894951,9,One year,Electronic check,DSL,Yes,No,3,1
+56,96.66356117423639,3328.7509686718995,14,One year,Electronic check,DSL,Yes,Yes,3,0
+29,46.826950699137704,727.3972485624602,14,Two year,Electronic check,Fiber optic,Yes,No,4,1
+25,81.21072410371809,3471.4518888352013,29,Month-to-month,Electronic check,No,No,Yes,2,1
+31,23.01311890223998,364.23148398535204,6,One year,Electronic check,No,No,No,3,1
+39,53.56334727646896,2786.3083057180174,33,Two year,Electronic check,DSL,No,Yes,2,0
+46,88.24010298789403,2151.143368671227,4,One year,Electronic check,No,No,No,3,0
+33,42.05581976525947,1270.9668976705307,72,Month-to-month,Mailed check,Fiber optic,Yes,No,2,0
+56,54.88908187968923,2196.567396605556,72,Month-to-month,Bank transfer,DSL,No,No,1,0
+48,105.44917071091749,5598.819070400497,12,Two year,Mailed check,Fiber optic,No,Yes,2,0
+34,51.67890049368644,1442.558156121464,50,Month-to-month,Credit card,DSL,No,No,0,1
+58,48.651379519268396,1928.4991223091902,12,Two year,Bank transfer,DSL,No,No,1,0
+62,84.3962090482668,3056.3339369672226,18,Two year,Credit card,Fiber optic,No,No,4,0
+43,118.86833907888234,624.8855429649077,33,Two year,Mailed check,No,No,No,2,0
+41,64.00825131764704,2454.110615448161,34,One year,Mailed check,DSL,No,No,1,0
+18,89.218396507965,333.289234213968,52,Month-to-month,Credit card,DSL,No,No,2,0
+38,103.64422950287516,3195.460178075489,14,Two year,Mailed check,Fiber optic,No,No,0,0
+40,78.1388040720143,569.2492595447596,21,One year,Mailed check,Fiber optic,No,Yes,2,0
+48,63.2520524703735,2334.760096899935,20,Two year,Bank transfer,Fiber optic,No,No,0,0
+42,48.09183153436284,2093.8249451810834,16,Month-to-month,Mailed check,Fiber optic,No,No,2,0
+48,34.369725976973385,1627.786114357191,28,Two year,Mailed check,No,No,Yes,0,0
+68,97.79254362759517,3502.015384134865,7,Month-to-month,Bank transfer,No,No,Yes,1,1
+37,74.52392864354718,4424.379270963717,1,Month-to-month,Electronic check,Fiber optic,Yes,No,2,1
+37,103.32002356057333,2297.2188704098803,17,Month-to-month,Credit card,DSL,No,Yes,2,1
+25,94.7231329087426,158.04980378390403,13,Month-to-month,Credit card,DSL,No,No,3,0
+44,54.575736999309626,2689.867263125033,17,Month-to-month,Bank transfer,DSL,No,No,3,0
+59,40.327832502491134,1116.582091813066,22,One year,Mailed check,Fiber optic,No,No,0,0
+18,80.31673957342291,2651.450161836729,10,One year,Mailed check,Fiber optic,No,Yes,4,1
+35,54.18732789146957,2762.1031408698873,8,Month-to-month,Mailed check,Fiber optic,Yes,Yes,4,1
+45,79.41722852501803,1307.0016481358007,27,Two year,Bank transfer,DSL,No,No,4,0
+57,51.7212015584648,1048.809464840238,12,Month-to-month,Electronic check,Fiber optic,Yes,No,1,0
+50,48.46936867006814,325.0309009034506,42,Month-to-month,Electronic check,No,No,No,1,0
+49,66.47522976148214,2740.489351409302,34,Two year,Electronic check,No,No,No,5,1
+41,93.3525155101996,1266.4852982033244,55,One year,Bank transfer,No,No,No,2,0
+52,77.66349738283942,3987.3237768535914,2,Month-to-month,Electronic check,Fiber optic,No,No,1,1
+60,99.45937871679456,3680.5987866062464,4,Two year,Credit card,DSL,No,No,1,1
+19,39.16095742361932,2144.8677120498437,22,Month-to-month,Mailed check,DSL,No,Yes,2,0
+55,43.57307146169254,200.3794738613514,29,Month-to-month,Electronic check,No,No,No,3,1
+43,67.77090752099211,4033.1008248353505,5,Month-to-month,Credit card,Fiber optic,No,No,1,1
+37,124.14253458232672,3037.7414551772217,1,One year,Credit card,Fiber optic,Yes,No,1,1
+18,86.85715283905932,2883.149208272552,47,One year,Electronic check,Fiber optic,No,No,1,0
+24,43.33468144888178,1689.1993078693968,36,One year,Electronic check,Fiber optic,No,No,5,0
+70,68.0964886760573,2017.7956998759119,60,One year,Electronic check,DSL,No,Yes,3,0
+34,75.51786977003145,2427.5530317751823,8,One year,Bank transfer,Fiber optic,Yes,No,1,0
+28,55.78285636097479,1428.7206488043232,17,Month-to-month,Electronic check,Fiber optic,Yes,No,1,1
+38,85.33187477641263,1026.2111405115959,31,Month-to-month,Electronic check,DSL,No,No,3,1
+33,66.08884654587985,3846.181015955499,23,Month-to-month,Electronic check,DSL,Yes,No,3,1
+46,62.51673204475823,3017.3495857319913,1,Month-to-month,Credit card,DSL,No,No,0,0
+67,101.50641967981198,3682.2066304556643,17,One year,Electronic check,Fiber optic,No,Yes,1,1
+36,27.258477445992874,118.25624391233866,72,Month-to-month,Electronic check,Fiber optic,No,Yes,7,1
+47,45.95486645538266,2471.852297719427,6,Month-to-month,Bank transfer,No,Yes,No,1,0
+27,49.567275463980494,275.93745940618385,14,One year,Bank transfer,No,Yes,Yes,2,0
+67,48.807973250032546,2301.233495128108,39,Month-to-month,Electronic check,DSL,No,No,1,1
+47,51.781173867715616,231.51757659247988,7,Month-to-month,Mailed check,DSL,No,No,2,1
+28,82.21189894727051,3774.741166792851,12,One year,Bank transfer,Fiber optic,Yes,No,0,0
+58,97.41332071025867,4951.521446211033,28,Month-to-month,Mailed check,DSL,Yes,Yes,1,1
+62,92.90103151639721,2558.051405173565,14,Month-to-month,Credit card,DSL,No,No,2,1
+47,44.51094683677478,1500.9416972781473,72,Month-to-month,Bank transfer,No,Yes,No,2,1
+20,67.31455253575315,3393.817645427815,45,One year,Credit card,Fiber optic,Yes,Yes,1,0
+71,81.3066303368706,4737.78219153355,8,Two year,Electronic check,Fiber optic,No,Yes,1,1
+49,76.00007380713606,155.67031974265169,1,Month-to-month,Mailed check,Fiber optic,No,No,1,1
+62,102.64368498773086,888.6330220405695,18,Two year,Bank transfer,DSL,Yes,Yes,0,0
+36,53.11664411139975,2761.2470354090915,46,One year,Electronic check,No,Yes,Yes,1,0
+39,73.90798552752058,3032.7668076850414,57,Month-to-month,Bank transfer,Fiber optic,No,No,1,0
+46,60.16923212734779,1027.0579460848087,3,Two year,Electronic check,DSL,Yes,Yes,2,0
+61,76.27687547723808,2079.496268648918,53,Month-to-month,Credit card,Fiber optic,Yes,No,4,0
+47,43.0275771827576,325.2540639547918,16,Two year,Credit card,DSL,No,No,1,0
+26,46.776556976060625,125.93063180433717,72,Month-to-month,Electronic check,No,No,Yes,2,1
+48,51.74722850528783,2286.5611694639874,38,One year,Bank transfer,Fiber optic,Yes,No,3,0
+69,55.908267221123836,2444.323228462673,4,Month-to-month,Electronic check,No,Yes,Yes,4,1
+45,108.69808164081908,4561.296440498289,17,Month-to-month,Bank transfer,DSL,Yes,No,1,1
+46,99.38504785738579,5285.551665209295,51,Two year,Bank transfer,No,No,Yes,3,0
+26,64.68375823215142,1158.600986130118,40,One year,Credit card,Fiber optic,Yes,Yes,3,0
+23,74.32333235523762,1931.9199355382189,72,Two year,Mailed check,No,No,No,1,0
+35,30.13909954724005,475.718181848266,43,Month-to-month,Bank transfer,DSL,Yes,No,2,0
+40,65.51769133621339,2482.67214271806,72,One year,Bank transfer,DSL,No,No,1,0
+46,73.99036783279318,2854.84427315391,17,Two year,Electronic check,No,Yes,Yes,2,0
+47,98.6421053350306,2471.8598410211753,21,One year,Mailed check,DSL,No,No,1,0
+69,78.17011799187414,4391.0289464920015,1,One year,Mailed check,DSL,No,No,2,1
+45,80.8222514693888,2410.4789777812216,12,One year,Credit card,DSL,No,Yes,0,0
+60,77.44407224376155,4270.3540356733065,9,Month-to-month,Mailed check,Fiber optic,No,Yes,2,1
+44,76.72502974180321,3383.339215237251,59,Month-to-month,Credit card,No,Yes,Yes,1,0
+66,35.08102060162561,1977.8858078599462,9,Month-to-month,Electronic check,Fiber optic,No,No,0,1
+18,59.58105829149249,2723.1139884755144,52,One year,Mailed check,No,No,No,2,0
+36,105.87216996353857,1509.4062155277034,6,Two year,Mailed check,No,Yes,No,1,1
+59,90.59741106523113,3777.022171400906,20,One year,Electronic check,Fiber optic,No,No,1,0
+42,82.35586247662852,1240.9315286189367,18,Two year,Electronic check,Fiber optic,No,No,2,1
+58,71.6678827306015,1300.4970271289403,2,Two year,Electronic check,DSL,No,Yes,2,0
+50,86.48603489364156,1216.4485160999202,9,Month-to-month,Electronic check,Fiber optic,No,No,1,1
+59,46.37776477617969,1404.6019285056516,72,One year,Credit card,Fiber optic,No,Yes,3,0
+54,30.498510949656065,811.4727897451702,21,Two year,Bank transfer,No,No,No,3,0
+55,60.44783619412579,3295.677546670546,42,One year,Mailed check,DSL,Yes,No,2,0
+67,83.44807644309445,3003.6881143435967,30,One year,Bank transfer,No,No,Yes,6,0
+59,72.69574705671528,1615.778764103275,55,One year,Electronic check,DSL,No,No,1,0
+59,95.34896697112374,3602.0700969836766,10,One year,Electronic check,Fiber optic,Yes,Yes,4,1
+45,78.78626291401171,1666.3644272050747,5,Two year,Mailed check,Fiber optic,Yes,No,3,0
+36,71.12105490535855,3580.427070854394,1,Two year,Electronic check,DSL,No,Yes,0,0
+35,103.18712385039092,645.5365695706014,44,One year,Bank transfer,DSL,No,No,2,0
+56,98.30939446143668,1366.9005049393925,17,One year,Electronic check,DSL,No,Yes,1,0
+18,67.54771746951394,442.3682260203822,30,Month-to-month,Credit card,DSL,Yes,No,1,1
+25,42.42375347459806,2212.916837131901,1,Two year,Bank transfer,DSL,No,No,2,0
+30,47.31596269361216,806.8289453382029,44,Two year,Mailed check,DSL,No,Yes,3,0
+41,65.96372154289617,3937.3101226024496,20,Month-to-month,Mailed check,DSL,No,Yes,2,0
+18,60.82971540868872,606.0045499789509,3,Month-to-month,Electronic check,Fiber optic,No,No,0,0
+63,111.44405824701626,2242.9162092964884,16,Month-to-month,Electronic check,No,No,Yes,1,0
+54,27.99664627638422,1503.5940918570157,21,Month-to-month,Electronic check,Fiber optic,No,No,5,1
+74,68.39355532776968,2632.342825256775,9,Month-to-month,Mailed check,DSL,No,No,2,1
+60,43.344337815044135,1308.7229881763292,29,Month-to-month,Credit card,Fiber optic,Yes,Yes,1,1
+60,72.92004672282629,777.7326842250789,20,Month-to-month,Bank transfer,DSL,No,No,1,1
+78,79.55662082230027,3792.0234686526687,44,One year,Bank transfer,No,Yes,Yes,2,0
+36,59.87757563965236,1236.372118598728,47,One year,Credit card,DSL,No,No,4,0
+22,83.2620353420379,3782.8731190865265,1,One year,Credit card,Fiber optic,Yes,No,0,0
+41,65.03432648734265,2301.272886266386,24,One year,Mailed check,Fiber optic,No,No,2,0
+32,65.51510968109575,2449.1868097967877,30,One year,Bank transfer,Fiber optic,No,Yes,6,1
+41,59.55278186452723,1202.4615943207425,3,Month-to-month,Mailed check,DSL,No,No,0,1
+29,86.27060721828957,468.257668219247,51,Two year,Bank transfer,No,Yes,No,3,0
+53,73.46253659265619,2653.761469042789,46,Two year,Mailed check,Fiber optic,No,No,2,0
+52,109.33099074456979,4905.284037961219,3,Two year,Mailed check,Fiber optic,No,No,1,1
+44,101.7506219206096,3560.032448811653,51,One year,Electronic check,DSL,Yes,No,3,0
+49,83.84436518926445,3057.6696160396677,24,One year,Bank transfer,DSL,No,No,3,0
+42,20.0,842.9545724732805,37,One year,Electronic check,Fiber optic,Yes,Yes,4,1
+56,32.891792198984064,119.82899130980705,38,Month-to-month,Electronic check,DSL,Yes,No,2,0
+46,94.65626431974566,1343.8890430366457,4,Two year,Mailed check,Fiber optic,No,No,2,0
+41,58.109036011873556,2162.701436294343,1,One year,Bank transfer,DSL,No,No,2,0
+58,75.87109394195727,682.9562326217205,24,Month-to-month,Electronic check,DSL,No,Yes,3,0
+63,54.238115000006886,919.1719998805181,9,One year,Credit card,DSL,No,No,1,0
+65,82.94716576290612,303.23365937380674,7,Month-to-month,Mailed check,DSL,No,No,5,1
+30,93.94974860236263,1287.2799624797676,3,One year,Electronic check,DSL,Yes,No,2,0
+36,39.759306510359565,66.9686204973295,47,Month-to-month,Credit card,Fiber optic,No,No,4,0
+19,49.660714362811554,2447.2831248595917,20,One year,Mailed check,Fiber optic,Yes,No,0,0
+41,28.40678966670719,1013.487273679546,43,One year,Bank transfer,No,No,Yes,3,0
+51,75.83518279571925,2521.8880990983484,19,Month-to-month,Electronic check,Fiber optic,Yes,No,4,1
+43,28.367989479254412,37.768595065192514,1,Month-to-month,Credit card,Fiber optic,No,No,3,0
+73,60.84795762753399,3112.818801958253,5,Two year,Bank transfer,DSL,No,No,3,0
+38,82.99027866332005,83.32244396926579,40,One year,Bank transfer,DSL,No,No,1,0
+28,121.45232336687403,5763.12913501471,5,Month-to-month,Electronic check,No,No,No,2,1
+53,79.2104585571863,1102.4615069486788,58,Month-to-month,Credit card,DSL,No,No,3,0
+47,101.32211854937307,5004.496556427412,9,Month-to-month,Credit card,DSL,No,Yes,4,1
+53,76.47897106399414,659.1205529651037,13,Two year,Bank transfer,No,No,No,3,0
+49,77.73108523462537,2587.9052364478757,26,One year,Electronic check,DSL,No,No,4,1
+48,64.72692755567014,177.20520651406932,38,Two year,Credit card,No,No,No,3,0
+18,60.41824667740913,2037.5690073313285,34,One year,Mailed check,DSL,No,Yes,1,0
+34,99.35945378856741,879.0648425020764,40,Month-to-month,Credit card,Fiber optic,No,Yes,3,1
+36,79.36685882062417,3854.0673169550096,17,Month-to-month,Electronic check,DSL,Yes,No,1,0
+39,78.4074086221139,1171.2887023593269,9,One year,Electronic check,DSL,No,No,3,0
+38,54.79561848922334,429.61209450551576,5,One year,Credit card,Fiber optic,Yes,Yes,2,0
+51,61.373956714289065,171.50934980828538,72,One year,Mailed check,Fiber optic,No,Yes,1,0
+54,121.68726207447648,4243.784028927747,20,Month-to-month,Electronic check,DSL,No,No,3,1
+28,68.31245423929312,2736.338878585974,72,Month-to-month,Mailed check,Fiber optic,No,No,1,0
+55,103.15420148979996,5549.183328867923,16,One year,Credit card,Fiber optic,No,No,1,0
+53,56.99370721664801,264.70851028965666,11,Month-to-month,Electronic check,Fiber optic,No,Yes,0,0
+51,90.03860428870705,2171.994234422388,22,Month-to-month,Mailed check,DSL,No,No,5,1
+23,77.24488997114031,820.55261709231,72,Month-to-month,Electronic check,Fiber optic,No,No,2,1
+51,59.90717236642162,1834.9630466608373,48,Two year,Credit card,DSL,No,No,4,0
+46,86.21407246361206,1298.9594164256534,12,One year,Mailed check,Fiber optic,Yes,No,4,0
+59,31.41390227768813,793.2392057156891,1,One year,Mailed check,Fiber optic,Yes,No,1,0
+71,84.3655357230292,1919.1864773851673,12,Month-to-month,Bank transfer,Fiber optic,No,No,0,0
+68,89.67258054779113,3740.2599869859073,34,One year,Electronic check,Fiber optic,No,No,2,1
+46,76.82682970281732,3439.737592555935,1,Month-to-month,Credit card,DSL,No,Yes,3,1
+44,102.77309241259643,2677.759984829948,42,One year,Mailed check,Fiber optic,No,No,1,0
+54,68.29748863266077,1051.5400124631456,7,Month-to-month,Credit card,No,Yes,No,4,1
+28,66.2715203837211,3173.3914101975793,10,One year,Mailed check,No,Yes,No,0,0
+23,78.8759882277,4024.9808006531052,60,Month-to-month,Electronic check,DSL,No,Yes,0,1
+37,91.69265631800434,3013.1127843925237,11,Month-to-month,Bank transfer,Fiber optic,Yes,Yes,2,1
+63,84.24601286131214,1324.7342433715246,15,Month-to-month,Credit card,Fiber optic,No,Yes,4,0
+40,64.334673133435,3039.805854058052,14,One year,Bank transfer,Fiber optic,No,No,2,0
+67,45.11930387053384,992.8963051994843,10,One year,Mailed check,DSL,No,No,5,1
+18,86.58698139865793,4779.861304277926,2,Month-to-month,Bank transfer,Fiber optic,Yes,Yes,1,1
+21,50.26071814317149,841.190157392728,13,Month-to-month,Bank transfer,No,No,No,3,0
+43,49.54311580099335,2797.9651297446862,16,Month-to-month,Electronic check,Fiber optic,Yes,No,4,0
+58,53.63392059893265,1407.724814289948,5,Month-to-month,Electronic check,No,Yes,Yes,2,1
+43,71.44272016892461,3246.587047736863,41,Month-to-month,Credit card,No,No,Yes,2,1
+43,50.092588392737376,667.4704106779418,16,Month-to-month,Credit card,Fiber optic,No,Yes,0,0
+43,41.607799080374235,1575.4085260545132,6,Month-to-month,Bank transfer,No,Yes,No,1,0
+18,53.528951388555384,1892.2334204738097,2,One year,Mailed check,DSL,Yes,No,1,0
+62,65.4167047384774,1687.6224868646984,20,Month-to-month,Credit card,Fiber optic,No,Yes,2,1
+34,81.35711170362687,3611.471002355466,15,Two year,Bank transfer,DSL,No,Yes,3,0
+61,71.68167276909352,3531.0904854721703,30,One year,Mailed check,No,Yes,Yes,4,1
+43,42.98844761877811,1887.580346794245,72,One year,Credit card,Fiber optic,No,Yes,0,0
+61,75.7165532892764,3708.04999057833,5,One year,Credit card,No,No,No,4,1
+50,78.0688880349,3510.4402719645454,31,One year,Mailed check,DSL,Yes,No,2,0
+43,58.625920239636194,576.2512986406609,13,Two year,Electronic check,No,No,Yes,2,0
+48,50.093848529300914,2332.9587391004266,12,One year,Electronic check,DSL,No,Yes,2,0
+22,50.08424614844048,613.5589443488766,8,Two year,Mailed check,Fiber optic,No,Yes,2,0
+45,56.70469207886117,388.66033218881455,10,Month-to-month,Credit card,DSL,No,No,5,1
+70,125.35605091089684,6793.939685770502,3,Two year,Mailed check,No,No,No,4,1
+64,47.773189780236336,1733.9730144056034,14,One year,Electronic check,Fiber optic,No,No,4,0
+30,76.649979179472,874.7840681574083,21,Month-to-month,Electronic check,Fiber optic,No,No,1,0
+52,52.14743509067702,2009.57728051395,7,Month-to-month,Electronic check,Fiber optic,No,Yes,3,1
+48,57.350422105366995,1183.6007399027133,14,One year,Credit card,No,No,No,1,0
+57,52.34658901508993,489.49567334397454,15,Two year,Electronic check,No,No,Yes,1,0
+46,90.0300596476643,4336.715782882424,25,Two year,Credit card,Fiber optic,No,Yes,1,1
+41,79.47769571358265,595.2250981411362,21,One year,Electronic check,Fiber optic,No,No,3,0
+64,66.7664049714799,3858.0790028572956,68,Month-to-month,Mailed check,Fiber optic,Yes,Yes,2,1
+48,82.57337366624424,3843.304814959344,17,One year,Bank transfer,DSL,No,No,0,1
+63,88.58664238184599,3811.1180489546277,22,One year,Electronic check,DSL,No,Yes,0,0
+59,48.73212383996235,736.3311041228715,18,Two year,Mailed check,Fiber optic,No,No,2,0
+40,83.68131032957577,3833.931885477871,10,Month-to-month,Mailed check,DSL,Yes,No,3,1
+42,52.059207889459664,121.31967555647724,4,Month-to-month,Electronic check,Fiber optic,No,No,1,1
+73,90.94838067983805,3062.9815328541927,1,Month-to-month,Bank transfer,DSL,No,Yes,0,1
+47,88.50496198466381,1711.1038639562378,6,One year,Bank transfer,DSL,No,Yes,4,1
+33,80.09257626741942,4013.0516740729927,19,One year,Mailed check,DSL,No,No,1,0
+26,64.75184146939911,2973.2708244645974,1,One year,Mailed check,DSL,No,No,3,0
+59,56.847268421972494,1693.052054784522,9,Month-to-month,Electronic check,Fiber optic,Yes,No,3,1
+47,63.40928253317263,1830.5631439452004,1,Month-to-month,Electronic check,Fiber optic,Yes,No,2,0
+33,89.22886910133826,474.3601429171988,27,Month-to-month,Bank transfer,Fiber optic,Yes,No,3,0
+55,52.941723858307995,785.9468639441731,17,Month-to-month,Mailed check,Fiber optic,Yes,Yes,2,0
+47,71.24178099925855,3043.9892188766707,53,One year,Bank transfer,Fiber optic,No,No,3,0
+20,26.309270766955763,128.19623082509358,23,Two year,Credit card,DSL,No,No,3,0
+53,76.50936646310753,3630.2139924633448,29,Month-to-month,Bank transfer,No,Yes,No,2,0
+64,44.11178956447623,2593.500758083704,51,One year,Electronic check,Fiber optic,No,No,0,0
+80,37.04658170412367,209.90836412292433,54,Month-to-month,Bank transfer,No,No,Yes,1,1
+45,82.96787204851603,2324.435837515904,11,One year,Electronic check,DSL,No,No,0,1
+48,75.25843825334525,2646.2638657281423,21,One year,Credit card,No,No,Yes,2,0
+69,58.915562758799815,2884.5825022506615,12,Month-to-month,Electronic check,DSL,No,No,1,0
+47,62.447608105767316,615.3948788126237,20,Two year,Mailed check,Fiber optic,Yes,Yes,1,0
+49,126.77584418641734,2820.452334142975,68,Two year,Bank transfer,DSL,Yes,Yes,0,0
+35,65.14639267442583,3276.8597475519064,72,One year,Electronic check,DSL,No,Yes,1,0
+24,64.96959929306026,2051.2868919842513,15,Two year,Electronic check,Fiber optic,No,No,2,0
+58,86.30763197886861,918.7520105229119,1,Month-to-month,Credit card,No,No,Yes,3,0
+25,72.18030843170885,3774.711358589454,72,Month-to-month,Bank transfer,DSL,No,Yes,3,0
+62,94.68571124393934,5324.303438278141,3,Two year,Bank transfer,Fiber optic,No,Yes,2,0
+33,76.93622004705357,3434.449303680495,1,One year,Electronic check,No,No,No,0,1
+48,89.02722856345956,5203.29931495543,28,Month-to-month,Bank transfer,Fiber optic,Yes,Yes,2,0
+39,81.08326032462082,4513.508290453291,45,One year,Bank transfer,Fiber optic,Yes,No,1,0
+62,86.13259412059104,703.0838580196133,23,Month-to-month,Mailed check,Fiber optic,No,No,3,1
+49,68.93367575384555,1733.4014268804033,21,Month-to-month,Mailed check,Fiber optic,No,No,2,0
+74,75.5631944317276,2736.63048885638,9,One year,Electronic check,No,No,Yes,3,0
+28,63.22411266998525,2795.1882984708345,23,One year,Electronic check,DSL,Yes,No,2,0
+51,85.1042376846585,2771.738881367871,41,One year,Credit card,No,No,Yes,1,1
+45,36.34903288586636,1428.6144043227916,9,Month-to-month,Electronic check,Fiber optic,Yes,No,1,0
+49,88.15340724720141,695.6640499260631,14,One year,Credit card,DSL,No,No,2,0
+68,94.95063375555522,2371.049506698673,24,Two year,Electronic check,No,No,No,4,0
+53,88.544044447868,124.36633628633652,36,Month-to-month,Bank transfer,DSL,Yes,No,1,0
+27,67.39755701208462,2659.448289348466,24,Month-to-month,Mailed check,DSL,Yes,No,3,0
+53,82.6307302776741,884.4840686589157,4,Month-to-month,Bank transfer,Fiber optic,Yes,Yes,4,1
+38,50.58553330140604,1256.2410179804656,18,Month-to-month,Electronic check,DSL,No,No,2,1
+37,90.92755534752604,2766.0438769446478,13,Two year,Electronic check,No,No,No,2,0
+60,42.51961773520745,1714.2364373040864,24,One year,Electronic check,DSL,No,No,2,0
+35,84.84327803123826,3905.4345152192745,24,One year,Electronic check,Fiber optic,No,No,0,0
+39,83.31643486533471,3598.5224615106204,2,Month-to-month,Electronic check,DSL,Yes,No,1,1
+45,80.16819590659239,2765.9124090519326,3,Month-to-month,Electronic check,No,No,No,4,1
+59,58.82290889381849,1893.9536103578646,2,Month-to-month,Bank transfer,Fiber optic,Yes,No,1,1
+53,89.00415582418859,4588.7958449739235,2,Month-to-month,Mailed check,Fiber optic,No,No,3,1
+41,24.06837843590897,1254.9271211539183,17,Month-to-month,Electronic check,DSL,Yes,No,3,0
+40,89.43054530919898,415.93098322719806,1,One year,Electronic check,DSL,No,Yes,3,1
+27,74.78594773832286,1266.765512101021,36,One year,Electronic check,Fiber optic,No,No,1,0
+33,96.27396681354634,5331.429686464641,20,Month-to-month,Electronic check,Fiber optic,No,No,0,1
+35,75.00122462291367,2697.5302530112263,30,One year,Mailed check,Fiber optic,No,No,2,0
+42,115.9547536689928,1037.2151348965433,15,One year,Credit card,No,No,No,2,0
+74,46.454516663796355,241.41385427624382,56,Month-to-month,Electronic check,DSL,No,No,1,1
+34,85.2351829625392,560.1211753454901,41,Month-to-month,Electronic check,No,No,No,5,1
+40,47.84988777110697,2221.218945224133,16,One year,Bank transfer,DSL,No,No,2,0
+18,66.84034548864437,942.2641585170005,6,Month-to-month,Mailed check,DSL,No,No,2,1
+54,88.55931469106687,1358.017994754312,3,Month-to-month,Electronic check,Fiber optic,Yes,No,2,0
+21,85.63575815526252,745.477471512255,44,Month-to-month,Electronic check,Fiber optic,No,Yes,3,0
+31,121.98846700894194,4437.903274809006,27,Month-to-month,Electronic check,Fiber optic,No,No,2,0
+60,61.21483166591251,1917.1749973825263,7,Month-to-month,Electronic check,DSL,Yes,No,4,0
+18,102.15003360365455,1798.9594184394732,31,One year,Credit card,Fiber optic,Yes,Yes,3,0
+46,63.6424953217452,2534.8389166625625,8,One year,Credit card,DSL,No,Yes,3,0
+57,52.47749779288253,2460.6297790408703,7,Month-to-month,Credit card,DSL,No,No,4,1
+67,29.4261609645744,1730.143130406281,32,Two year,Mailed check,DSL,Yes,No,2,0
+31,74.06676564755377,2166.011141487083,32,Two year,Bank transfer,No,No,Yes,1,0
+35,56.9673598595968,1445.0394746052548,41,Two year,Credit card,Fiber optic,No,Yes,1,0
+72,91.1879342457226,1663.116289184753,45,Month-to-month,Electronic check,DSL,No,No,5,1
+44,56.78998112663919,2685.6798769787642,18,Two year,Electronic check,DSL,Yes,No,3,1
+33,58.084961060451384,3389.870526284147,7,One year,Electronic check,DSL,No,No,1,0
+34,78.86638191077347,2872.7120589290457,22,Month-to-month,Mailed check,DSL,Yes,No,3,0
+30,113.0303949534848,4396.505011162257,8,Month-to-month,Electronic check,Fiber optic,No,Yes,4,1
+38,42.78375297659629,1782.3291541711585,37,Two year,Credit card,Fiber optic,Yes,No,3,0
+61,95.4403201182999,2478.9431943325662,3,One year,Mailed check,DSL,Yes,No,2,0
+58,91.85263249488423,1285.982011144386,9,One year,Electronic check,Fiber optic,Yes,No,1,0
+27,64.47635074078916,1038.7834567464545,1,Month-to-month,Mailed check,Fiber optic,No,No,2,0
+48,86.8854071254585,3250.7962295037164,14,One year,Electronic check,Fiber optic,No,No,3,0
+38,62.893089341813074,2429.0102043847087,3,One year,Bank transfer,Fiber optic,Yes,No,3,1
+56,129.28471135063126,3652.6581486637783,72,Two year,Credit card,Fiber optic,No,Yes,3,0
+42,67.19761770612304,239.02630378871353,10,Month-to-month,Mailed check,DSL,No,No,3,0
+50,72.0103523388166,3799.038441184498,37,Month-to-month,Bank transfer,DSL,No,No,5,1
+42,61.85520977122938,953.469742533574,42,One year,Mailed check,DSL,Yes,Yes,1,0
+18,27.663648812211527,975.9986727622942,2,Two year,Electronic check,No,No,No,1,0
+45,63.421165503045266,2827.413518909083,26,Month-to-month,Electronic check,DSL,Yes,No,1,1
+25,75.80092428847269,900.2140198595405,10,Month-to-month,Mailed check,DSL,No,No,1,1
+56,107.52306554141828,3110.0304056475516,8,Month-to-month,Credit card,No,No,No,1,1
+34,82.29892819491415,88.79637379843581,33,One year,Mailed check,No,No,No,4,1
+35,65.26544530668258,247.95293390985316,7,Two year,Bank transfer,DSL,No,No,2,0
+44,71.49857981869044,1128.1688482612835,8,Month-to-month,Bank transfer,No,No,Yes,3,0
+53,78.18350916020746,3116.7583596958343,33,Two year,Bank transfer,Fiber optic,Yes,No,1,0
+42,60.52584853552665,3226.8654199057614,10,Month-to-month,Bank transfer,DSL,No,No,2,0
+69,87.05592542007156,2267.345763641485,11,One year,Bank transfer,DSL,Yes,No,1,1
+69,110.62720395216704,274.05100307836483,32,One year,Bank transfer,No,No,No,1,0
+70,60.92128153761158,1113.0646931391318,3,Month-to-month,Credit card,DSL,No,Yes,3,0
+41,100.18825664625905,5757.127403789988,28,One year,Electronic check,DSL,Yes,Yes,5,0
+22,91.90815760578303,695.0048572479726,9,Month-to-month,Credit card,DSL,No,Yes,6,1
+63,83.43112152634662,3803.356210946782,44,Month-to-month,Bank transfer,Fiber optic,No,No,2,1
+38,72.79814046392161,3282.6377244483106,23,Month-to-month,Mailed check,DSL,No,No,3,0
+45,78.44459677456777,2808.745897753331,1,Two year,Bank transfer,No,No,Yes,1,0
+54,64.56517065320477,3610.6438251475543,3,One year,Electronic check,DSL,No,No,2,0
+20,115.92171259316493,4507.830729629608,33,Month-to-month,Bank transfer,No,Yes,No,2,0
+69,52.03992110611342,3019.5557895240986,5,Month-to-month,Electronic check,DSL,No,No,3,1
+58,98.37361735714836,4893.27845676372,1,Month-to-month,Electronic check,DSL,No,Yes,0,1
+50,108.74304303164038,5203.211312421428,32,Month-to-month,Bank transfer,Fiber optic,Yes,No,5,1
+58,61.921641679432504,3536.4699968591417,26,One year,Credit card,No,No,Yes,1,0
+53,99.14617398230271,3708.6116299951445,6,Two year,Mailed check,No,No,No,4,1
+46,73.59953365577526,1473.3619120629767,23,Month-to-month,Electronic check,DSL,No,No,2,1
+40,71.55899471588758,509.21686299231703,23,One year,Bank transfer,DSL,No,No,3,0
+33,68.13590767909697,2859.092640099324,67,One year,Credit card,Fiber optic,No,No,3,0
+49,29.65672248643947,945.2626251562295,2,Month-to-month,Bank transfer,DSL,Yes,No,3,0
+50,83.69809895629263,1987.1124375357592,4,One year,Credit card,No,Yes,No,3,0
+61,106.08879410879365,6050.777569675476,8,Month-to-month,Credit card,DSL,No,No,2,0
+48,52.381989434384856,2872.2749964930103,34,One year,Mailed check,DSL,No,No,2,0
+32,91.18346645197599,2124.480201770972,15,Month-to-month,Credit card,DSL,No,Yes,1,1
+21,67.86986519265696,3853.908384452767,11,Month-to-month,Credit card,Fiber optic,Yes,No,4,1
+43,42.68276812556465,1130.6331354847955,11,Month-to-month,Electronic check,DSL,Yes,No,0,1
+44,94.9472491429946,1249.7163436604094,17,Two year,Electronic check,Fiber optic,No,Yes,2,0
+43,112.1509207824061,4218.938059045431,9,One year,Electronic check,Fiber optic,Yes,Yes,2,0
+22,50.14369102825975,328.97442982696435,27,Month-to-month,Bank transfer,DSL,No,No,2,0
+61,75.39504238832184,754.498776381656,1,Month-to-month,Credit card,DSL,Yes,No,1,0
+61,34.00660730801623,1667.7557129554,21,Month-to-month,Electronic check,DSL,No,No,1,0
+32,68.94981703571912,3401.1070931032627,10,Two year,Mailed check,DSL,No,No,0,0
+57,82.15166007108158,1248.393825005154,15,Month-to-month,Bank transfer,Fiber optic,Yes,No,1,1
+59,113.8227401460865,5129.410733444095,33,Month-to-month,Credit card,DSL,Yes,No,2,1
+45,108.93934290315312,6366.486961921965,1,One year,Mailed check,Fiber optic,No,No,1,0
+30,111.06245853908052,6387.496598901037,5,Month-to-month,Bank transfer,DSL,Yes,Yes,0,1
+69,56.82270145319893,1547.1014736732113,17,Month-to-month,Mailed check,Fiber optic,No,No,1,0
+50,63.8708732875246,3319.3987625266122,23,One year,Electronic check,DSL,No,Yes,4,1
+41,28.392364376951583,961.6239259635677,4,Month-to-month,Electronic check,No,No,No,0,1
+56,52.12111228952553,1788.9276773830347,5,Month-to-month,Electronic check,No,No,No,0,0
+69,33.70426995387231,509.50609484920955,23,Month-to-month,Credit card,DSL,Yes,No,0,1
+37,79.13842241593105,1873.0878939199476,30,Month-to-month,Electronic check,DSL,No,Yes,1,1
+55,52.575249880218905,719.0990305053103,14,Month-to-month,Electronic check,Fiber optic,No,No,1,1
+74,42.46444325462568,1902.6033293939488,14,One year,Electronic check,DSL,No,No,1,1
+28,61.11463910248299,2370.9364422832723,12,Month-to-month,Electronic check,Fiber optic,Yes,Yes,2,1
+36,40.37807610176391,1956.884895425641,6,Month-to-month,Mailed check,Fiber optic,No,No,2,1
+36,77.72542049469082,2920.3633654582522,72,One year,Credit card,DSL,No,No,2,0
+42,77.11118735058591,1338.1776207181447,23,Month-to-month,Bank transfer,DSL,No,No,2,0
+41,62.10718524855651,3552.4730224360933,10,One year,Bank transfer,Fiber optic,Yes,No,2,1
+49,51.73311298966434,2037.867629653292,7,Month-to-month,Credit card,DSL,No,No,3,0
+32,36.51396562886082,1062.6988604962169,6,One year,Bank transfer,DSL,No,No,1,1
+35,83.88391513120101,3932.2158707285485,9,One year,Electronic check,Fiber optic,No,Yes,1,0
+49,75.71801849838592,1213.227727184901,19,Month-to-month,Mailed check,DSL,No,Yes,1,0
+47,81.60788660306109,3985.654615774781,20,One year,Mailed check,No,No,No,1,0
+58,62.33911547618382,1306.5864608033874,26,Month-to-month,Credit card,No,No,No,1,0
+51,64.55191236046495,348.88289771104866,1,Month-to-month,Electronic check,Fiber optic,No,No,0,1
+56,106.04997871940756,5004.48067326138,20,One year,Bank transfer,No,No,No,1,0
+27,54.985378362526575,674.4821411152528,20,Month-to-month,Electronic check,No,No,Yes,3,1
+39,62.183899436047895,2426.027536933932,60,One year,Electronic check,Fiber optic,Yes,Yes,2,0
+72,88.59730207162872,1498.8351838421295,6,Month-to-month,Mailed check,No,No,No,1,1
+50,77.57278241389074,3214.729762774649,1,Month-to-month,Electronic check,Fiber optic,Yes,No,5,1
+56,20.0,168.79598321451195,69,Month-to-month,Bank transfer,Fiber optic,No,No,0,0
+49,27.80283174920831,1051.2411127589112,19,One year,Electronic check,Fiber optic,Yes,Yes,1,0
+51,53.47921833474764,659.351169312996,2,Two year,Electronic check,DSL,No,No,3,0
+41,92.75749161113416,2847.488999376282,9,One year,Credit card,DSL,No,No,1,0
+80,86.79182694206708,4555.645555638316,11,Month-to-month,Electronic check,DSL,No,No,4,1
+39,82.98808401874963,2410.7935263937734,35,Two year,Mailed check,Fiber optic,No,No,2,0
+44,85.69360240839559,3989.2017891942187,7,One year,Mailed check,DSL,Yes,No,1,1
+18,45.77638113443694,441.30524945594766,71,Two year,Mailed check,Fiber optic,No,Yes,1,0
+61,85.02617733126385,3381.6623554849425,20,Two year,Electronic check,No,No,No,2,0
+36,46.96790758193643,468.1217367674704,2,Month-to-month,Credit card,DSL,Yes,No,1,0
+44,93.68248004430264,4341.7481254166605,16,Month-to-month,Bank transfer,Fiber optic,No,No,2,0
+37,57.23587164464816,2468.56035702971,21,Two year,Credit card,DSL,No,Yes,0,0
+42,77.040651952667,1906.1388885853669,72,Month-to-month,Bank transfer,DSL,No,No,1,1
+40,23.137539907024575,664.7964501614083,58,Month-to-month,Bank transfer,DSL,No,No,3,1
+44,36.277777194865365,396.75105963474647,67,One year,Electronic check,DSL,No,Yes,3,0
+44,97.26693594718947,3744.361366133001,24,One year,Bank transfer,DSL,Yes,No,2,0
+42,87.29359675467275,4787.923050869118,24,Month-to-month,Bank transfer,DSL,No,No,1,0
+42,39.551580666980016,1347.3325213503533,27,Two year,Mailed check,DSL,No,No,3,0
+64,102.13979306034999,2001.3513874806786,1,One year,Bank transfer,No,No,No,2,1
+58,42.73038927954644,1074.982133369104,7,Month-to-month,Electronic check,DSL,No,Yes,4,1
+58,70.49902759760832,978.4150182225454,7,One year,Mailed check,Fiber optic,No,Yes,1,1
+34,57.99748445334619,1569.6359754221742,36,Month-to-month,Credit card,Fiber optic,No,Yes,2,1
+63,46.91462008447198,1417.4120919559182,4,Month-to-month,Electronic check,Fiber optic,Yes,No,2,1
+61,99.19851403846445,5605.109100116749,32,Month-to-month,Bank transfer,No,No,No,1,1
+36,112.12453739060672,2956.0908098962177,12,One year,Bank transfer,DSL,No,No,3,0
+67,74.45685542744143,3862.297917287405,7,Month-to-month,Electronic check,DSL,No,No,1,0
+34,108.1499729215667,1172.6448434511356,56,Two year,Bank transfer,Fiber optic,No,Yes,3,0
+18,62.9696236702651,2088.391377926447,8,Month-to-month,Mailed check,DSL,No,Yes,2,1
+61,72.70771495955886,2607.0040087362786,35,Two year,Electronic check,Fiber optic,No,Yes,1,1
+43,73.28723140986546,2640.4999226664922,34,Month-to-month,Mailed check,DSL,No,Yes,2,1
+59,41.082277784406955,1258.2240922936596,11,Two year,Electronic check,Fiber optic,No,No,2,1
+33,82.48642231156327,3815.960728647388,9,One year,Credit card,DSL,No,No,2,1
+26,87.74232850405923,982.627931617279,1,Month-to-month,Credit card,DSL,No,No,1,0
+63,65.66315913396683,329.5085692267267,14,Month-to-month,Mailed check,DSL,No,No,3,1
+23,27.706220797178922,261.0057910269573,4,Month-to-month,Electronic check,Fiber optic,No,No,4,1
+21,79.19263735927693,2710.816230199084,1,Month-to-month,Bank transfer,Fiber optic,No,Yes,1,0
+18,32.124662146242926,505.4384551945401,22,One year,Electronic check,Fiber optic,Yes,No,2,0
+18,49.71825415910571,2216.124014931481,3,One year,Electronic check,DSL,No,Yes,3,0
+29,73.28553231125787,345.0648565140588,8,Month-to-month,Mailed check,Fiber optic,No,No,3,0
+18,50.75843839190616,2772.9674007086005,30,Month-to-month,Bank transfer,Fiber optic,Yes,No,0,0
+44,76.34191626362937,4363.017243619211,32,One year,Bank transfer,Fiber optic,No,No,2,0
+18,64.344743627588,3046.9431380476926,72,Month-to-month,Credit card,DSL,No,No,1,0
+28,29.237587231473633,1543.7224885011724,57,One year,Credit card,DSL,Yes,No,0,0
+79,74.19928902696275,1730.4937978511953,17,One year,Credit card,Fiber optic,Yes,No,2,0
+50,84.66449200716352,881.8753506058326,69,Month-to-month,Bank transfer,Fiber optic,Yes,No,2,0
+45,95.31000607029704,1219.6783681338475,10,Two year,Mailed check,DSL,No,Yes,1,0
+20,60.83579813082637,1860.0589926714435,19,One year,Credit card,Fiber optic,Yes,Yes,3,0
+41,68.46290803161983,2740.0054331853844,18,Month-to-month,Mailed check,Fiber optic,Yes,No,1,0
+45,32.62228326650498,1127.380439098827,1,One year,Electronic check,No,No,No,2,1
+20,119.12223513348226,856.6564690109623,1,Month-to-month,Electronic check,Fiber optic,No,No,0,1
+46,107.6252047337421,4725.524810409857,6,Month-to-month,Credit card,No,Yes,No,4,1
+62,69.20414955966122,3290.708070255327,64,Month-to-month,Electronic check,Fiber optic,No,No,1,0
+39,66.87895568387613,183.38007622627592,56,Month-to-month,Electronic check,DSL,No,No,1,1
+42,20.0,561.5001101739113,24,Month-to-month,Credit card,No,No,No,3,0
+18,95.88156407281872,2572.475833542083,1,Month-to-month,Mailed check,DSL,No,Yes,4,1
+24,84.07152952893219,417.49461126409534,72,One year,Bank transfer,Fiber optic,No,Yes,1,0
+60,90.32029676242169,1032.3054453619018,1,Two year,Credit card,Fiber optic,No,No,4,1
+35,59.86879611751433,2938.6279521177703,16,Two year,Electronic check,No,No,Yes,2,0
+31,58.26427937341583,2068.022159706998,23,Month-to-month,Mailed check,DSL,No,No,1,1
+34,39.11453385449166,544.2920068796054,29,One year,Electronic check,Fiber optic,No,No,1,0
+44,89.45024325462501,2508.7014018031828,62,One year,Bank transfer,DSL,No,No,0,0
+27,101.3038469674616,5209.297141966479,10,Month-to-month,Mailed check,DSL,Yes,Yes,1,0
+46,98.09707191907616,690.1321107705968,11,Month-to-month,Electronic check,DSL,No,Yes,1,1
+24,74.68143940020883,4284.732468788183,18,Month-to-month,Electronic check,DSL,No,No,3,0
+56,61.83370744581182,577.7969098062648,6,One year,Electronic check,DSL,No,Yes,0,0
+29,43.70073941584741,793.3441879709468,19,Month-to-month,Bank transfer,Fiber optic,No,Yes,1,0
+64,52.45623700922864,614.1268388960823,10,Month-to-month,Credit card,Fiber optic,No,No,5,1
+44,81.68876184087556,2344.7817904402486,63,Two year,Bank transfer,Fiber optic,Yes,No,3,1
+32,62.88616561497817,1215.1594418789634,8,Two year,Bank transfer,DSL,No,Yes,1,0
+58,111.03510461838798,6586.822046688254,24,One year,Bank transfer,Fiber optic,No,Yes,4,0
+24,98.80890077060818,188.60669772211654,11,Month-to-month,Mailed check,Fiber optic,Yes,No,4,1
+36,54.95477169709609,1097.4827882991765,72,Two year,Bank transfer,No,No,No,1,0
+44,39.60844839162492,1429.3531966053358,53,Month-to-month,Electronic check,DSL,No,No,3,0

@@ -1,0 +1,37 @@
+# MVP Development Tools Requirements
+# Core dependencies for the Strategic Blueprint MVP toolkit
+
+# Data handling and analysis
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Date and time utilities (built-in datetime module used primarily)
+python-dateutil>=2.8.0
+
+# JSON handling (built-in json module used primarily)
+# No additional JSON libraries required
+
+# Optional: Enhanced data visualization (for future dashboard features)
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Optional: Statistical analysis (for advanced feedback analysis)
+scipy>=1.9.0
+scikit-learn>=1.1.0
+
+# Optional: Web framework (if building web dashboard)
+fastapi>=0.85.0
+uvicorn>=0.18.0
+
+# Optional: CLI enhancements
+click>=8.0.0
+rich>=12.0.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Code quality
+black>=22.0.0
+flake8>=5.0.0
+mypy>=0.991

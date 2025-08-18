@@ -1,0 +1,51 @@
+age,income,category,experience_years,department,salary_band,performance_score,location
+3570722,86974,B,10,Engineering,Senior,9.2,Boston
+11658881,56352,A,10,Marketing,Mid,7.4,New York
+12909784,54665,A,3,Engineering,Mid,7.4,Boston
+14906075,61347,B,3,Marketing,Principal,9.2,San Francisco
+2962014,84130,C,12,Sales,Junior,7.9,Boston
+14718874,54906,A,2,Engineering,Mid,7.2,Austin
+14064799,56498,A,4,Engineering,Mid,9.2,San Francisco
+416162,74921,B,5,Marketing,Mid,7.9,Miami
+6041184,71834,A,7,Sales,Junior,7.7,Denver
+2862012,96486,B,14,Engineering,Principal,9.3,Chicago
+6707790,55309,A,8,Sales,Junior,6.8,New York
+9953828,77698,C,13,Marketing,Mid,7.7,Austin
+652863,51202,A,2,Sales,Junior,7.1,Seattle
+2002199,55122,A,4,Marketing,Mid,6.8,Chicago
+5038727,56370,A,11,Sales,Junior,7.3,San Francisco
+9909068,59401,A,2,Sales,Mid,6.8,Portland
+8835249,99522,B,14,Engineering,Principal,9.2,Nashville
+7879772,96583,B,14,Engineering,Principal,8.7,San Diego
+8990177,86314,A,13,Engineering,Junior,8.7,San Diego
+12136151,56102,A,11,Sales,Junior,8.5,San Francisco
+14691308,109469,C,14,Engineering,Mid,7.2,Phoenix
+7593988,51729,B,3,Marketing,Junior,7.1,Portland
+14316228,53020,A,4,Sales,Mid,7.0,San Francisco
+5482579,71631,B,14,Engineering,Principal,9.1,Austin
+2021413,59045,B,4,Marketing,Senior,8.9,Austin
+8157159,76063,B,15,Engineering,Senior,9.1,Boston
+13400288,97156,C,14,Engineering,Senior,9.2,Seattle
+3719124,78837,A,7,Engineering,Junior,7.3,San Diego
+15415233,81468,C,5,Sales,Junior,8.7,Chicago
+1103234,107839,C,13,Marketing,Mid,8.6,Nashville
+6291845,54066,A,2,Sales,Junior,7.1,San Francisco
+13597049,55969,A,5,Engineering,Mid,8.6,Denver
+9526520,80334,B,13,Sales,Mid,9.1,San Francisco
+11721799,90918,C,12,Marketing,Junior,9.2,Miami
+293759,65312,B,7,Sales,Junior,6.8,Nashville
+3766441,51505,A,3,Engineering,Mid,6.8,Los Angeles
+9393112,90878,A,14,Engineering,Mid,8.8,Portland
+8960127,50773,A,2,Marketing,Junior,6.8,Nashville
+6186382,62287,B,10,Engineering,Principal,7.7,Portland
+3244592,93065,C,14,Sales,Mid,7.6,Nashville
+5252662,63158,B,6,Sales,Junior,6.8,Phoenix
+5992477,100987,C,15,Marketing,Senior,8.3,Boston
+67845,72537,B,12,Marketing,Mid,7.6,Chicago
+8592715,66013,A,11,Engineering,Principal,8.6,New York
+14224960,66522,B,9,Engineering,Mid,7.9,Denver
+9525393,89641,A,13,Engineering,Senior,8.8,Phoenix
+4682851,88854,C,12,Sales,Junior,9.2,Boston
+11615598,66246,A,8,Sales,Junior,6.9,Denver
+7411867,52583,A,3,Engineering,Junior,8.4,Seattle
+13091300,56709,A,2,Sales,Junior,8.5,Seattle

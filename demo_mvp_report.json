@@ -1,0 +1,285 @@
+{
+  "executive_summary": {
+    "dashboard_name": "MVP Development Dashboard",
+    "last_updated": "2025-08-16T15:57:49.388798",
+    "project_status": {
+      "current_phase": "Phase III: Development and Implementation",
+      "mvp_completion_percentage": 66.66666666666667,
+      "feature_completion_percentage": 0.0,
+      "total_features": 12,
+      "mvp_features": 8
+    },
+    "key_metrics": {
+      "total_tasks": 6,
+      "completed_tasks": 3,
+      "total_feedback": 5,
+      "user_personas": 2,
+      "user_stories": 3
+    },
+    "health_indicators": {
+      "on_track": false,
+      "at_risk": false,
+      "critical": false,
+      "risks": []
+    },
+    "next_milestones": [
+      {
+        "id": "M002",
+        "name": "MVP Core Features Complete",
+        "description": "All must-have features implemented",
+        "milestone_type": "Feature Delivery",
+        "target_date": "2025-08-30T15:57:49.388798",
+        "completion_date": null,
+        "success_criteria": [
+          "CSV upload working",
+          "Synthetic data generation working",
+          "Quality reports generated",
+          "API endpoints functional"
+        ],
+        "related_tasks": [],
+        "metrics": {},
+        "is_completed": false,
+        "notes": "",
+        "created_date": "2025-08-16T15:57:49.388798",
+        "is_overdue": false,
+        "days_until_due": 13
+      }
+    ]
+  },
+  "feature_insights": {
+    "total_features": 12,
+    "moscow_distribution": {
+      "must_have": 5,
+      "should_have": 3,
+      "could_have": 2,
+      "wont_have": 2
+    },
+    "status_distribution": {
+      "backlog": 12
+    },
+    "mvp_scope": {
+      "features_count": 8,
+      "estimated_effort": 40
+    },
+    "top_priority_features": [
+      {
+        "name": "CSV Upload & Processing",
+        "rice_score": 300.0,
+        "moscow_priority": "Must-Have",
+        "status": "backlog"
+      },
+      {
+        "name": "API Endpoints",
+        "rice_score": 252.0,
+        "moscow_priority": "Must-Have",
+        "status": "backlog"
+      },
+      {
+        "name": "Synthetic Data Generation",
+        "rice_score": 160.0,
+        "moscow_priority": "Must-Have",
+        "status": "backlog"
+      },
+      {
+        "name": "Quality Report Generation",
+        "rice_score": 126.0,
+        "moscow_priority": "Must-Have",
+        "status": "backlog"
+      },
+      {
+        "name": "Demo Model Training",
+        "rice_score": 72.0,
+        "moscow_priority": "Must-Have",
+        "status": "backlog"
+      }
+    ]
+  },
+  "user_insights": {
+    "total_personas": 2,
+    "segment_distribution": {
+      "Data Scientist": 1,
+      "Startup Founder": 1
+    },
+    "top_pain_points": [
+      {
+        "pain_point": "Insufficient training data for ML models",
+        "frequency": 1
+      },
+      {
+        "pain_point": "Data privacy regulations limit data sharing",
+        "frequency": 1
+      },
+      {
+        "pain_point": "Long wait times for data collection",
+        "frequency": 1
+      },
+      {
+        "pain_point": "Expensive data acquisition costs",
+        "frequency": 1
+      },
+      {
+        "pain_point": "Limited budget for data acquisition",
+        "frequency": 1
+      }
+    ],
+    "top_goals": [
+      {
+        "goal": "Build ML models with limited training data",
+        "frequency": 1
+      },
+      {
+        "goal": "Ensure data privacy compliance",
+        "frequency": 1
+      },
+      {
+        "goal": "Accelerate model development cycles",
+        "frequency": 1
+      },
+      {
+        "goal": "Validate product concepts quickly",
+        "frequency": 1
+      },
+      {
+        "goal": "Reduce development costs",
+        "frequency": 1
+      }
+    ],
+    "user_stories": {
+      "total": 3,
+      "critical": 1,
+      "high_priority": 2,
+      "story_points_total": 19
+    }
+  },
+  "progress_insights": {
+    "overall_progress": 66.66666666666667,
+    "current_phase": "Phase III: Development and Implementation",
+    "project_timeline": {
+      "days_elapsed": 0,
+      "start_date": "2025-08-16T15:57:49.388798"
+    },
+    "phase_breakdown": {
+      "DISCOVERY": {
+        "progress_percentage": 100.0,
+        "total_tasks": 2,
+        "completed_tasks": 2,
+        "overdue_tasks": 0
+      },
+      "PRIORITIZATION": {
+        "progress_percentage": 50.0,
+        "total_tasks": 1,
+        "completed_tasks": 0,
+        "overdue_tasks": 0
+      },
+      "DEVELOPMENT": {
+        "progress_percentage": 50.0,
+        "total_tasks": 3,
+        "completed_tasks": 1,
+        "overdue_tasks": 0
+      },
+      "TESTING": {
+        "progress_percentage": 0.0,
+        "total_tasks": 0,
+        "completed_tasks": 0,
+        "overdue_tasks": 0
+      },
+      "LAUNCH": {
+        "progress_percentage": 0.0,
+        "total_tasks": 0,
+        "completed_tasks": 0,
+        "overdue_tasks": 0
+      },
+      "ITERATION": {
+        "progress_percentage": 0.0,
+        "total_tasks": 0,
+        "completed_tasks": 0,
+        "overdue_tasks": 0
+      }
+    },
+    "milestones": {
+      "total": 3,
+      "completed": 1,
+      "upcoming": 2,
+      "overdue": 0
+    },
+    "task_health": {
+      "total_tasks": 6,
+      "completed_tasks": 3,
+      "overdue_tasks": 0
+    }
+  },
+  "feedback_insights": {
+    "total_feedback": 5,
+    "recent_feedback": 5,
+    "resolution_rate": 20.0,
+    "sentiment_analysis": {
+      "average_sentiment": 0.04000000000000002,
+      "trend": "improving",
+      "sample_size": 5,
+      "sentiment_distribution": {
+        "positive": 2,
+        "neutral": 1,
+        "negative": 2
+      }
+    },
+    "type_distribution": {
+      "Bug Report": 1,
+      "Feature Request": 2,
+      "Praise": 1,
+      "Usability Issue": 1
+    },
+    "priority_distribution": {
+      "High": 1,
+      "Medium": 3,
+      "Low": 1
+    },
+    "common_themes": [
+      {
+        "theme": "Feature Request Issues",
+        "frequency": 2,
+        "average_impact": 3,
+        "feedback_ids": [
+          "FB002",
+          "FB004"
+        ]
+      }
+    ],
+    "key_insights": [
+      "Most Common Issue: Feature Request Issues"
+    ],
+    "urgent_items": 0
+  },
+  "build_measure_learn": {
+    "current_stage": "Learn",
+    "build_status": {
+      "progress_percentage": 50.0,
+      "development_tasks": 3,
+      "completed_features": 0
+    },
+    "measure_status": {
+      "total_metrics": 3,
+      "active_metrics": 3,
+      "measurement_coverage": 100.0
+    },
+    "learn_status": {
+      "feedback_collected": 5,
+      "insights_generated": 1,
+      "learning_rate": 20.0
+    },
+    "loop_health": {
+      "is_active": true,
+      "cycle_completeness": 50.0
+    }
+  },
+  "generated_at": "2025-08-16T15:57:49.397493",
+  "action_items": [
+    {
+      "priority": "Medium",
+      "category": "Feature Development",
+      "title": "Focus on MVP Feature Completion",
+      "description": "Only 0 of 8 MVP features completed",
+      "action": "Prioritize completion of remaining MVP features",
+      "due_date": "2025-08-30T15:57:49.399715"
+    }
+  ]
+}
