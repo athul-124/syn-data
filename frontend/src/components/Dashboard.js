@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Calculate stats when data changes
-    const completedTasks = generationTasks.filter(task => task.status === 'COMPLETED');
+    const completedTasks = generationTasks.filter(task => task.status === 'completed');
     const totalSyntheticRows = completedTasks.reduce((sum, task) => sum + (task.n_rows || 0), 0);
     const successRate = generationTasks.length > 0 ? (completedTasks.length / generationTasks.length) * 100 : 0;
 
@@ -33,11 +33,11 @@ const Dashboard = () => {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'COMPLETED':
+      case 'completed':
         return <CheckCircle className="text-green-500" size={16} />;
-      case 'FAILED':
+      case 'failed':
         return <XCircle className="text-red-500" size={16} />;
-      case 'RUNNING':
+      case 'processing':
         return <Clock className="text-blue-500 animate-spin" size={16} />;
       default:
         return <Clock className="text-gray-500" size={16} />;
@@ -154,14 +154,23 @@ const Dashboard = () => {
                       </p>
                     </div>
                   </div>
-                  {task.status === 'COMPLETED' && task.result && (
-                    <a
-                      href={`http://localhost:8000${task.result.download_url}`}
-                      className="flex items-center space-x-1 px-2 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700"
-                    >
-                      <Download size={12} />
-                      <span>Download</span>
-                    </a>
+                  {task.status === 'completed' && (
+                    <div className="flex items-center space-x-2">
+                      <a
+                        href={`http://localhost:8000/download/${task.task_id || task.id}`}
+                        className="flex items-center space-x-1 px-2 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700"
+                      >
+                        <Download size={12} />
+                        <span>Data</span>
+                      </a>
+                      <a
+                        href={`http://localhost:8000/download/report/${task.task_id || task.id}`}
+                        className="flex items-center space-x-1 px-2 py-1 bg-gray-600 text-white text-xs rounded hover:bg-gray-700"
+                      >
+                        <FileText size={12} />
+                        <span>Report</span>
+                      </a>
+                    </div>
                   )}
                 </div>
               ))}
@@ -219,20 +228,28 @@ const Dashboard = () => {
                     <td className="py-2 font-mono text-xs">{task.file_id}</td>
                     <td className="py-2">{task.n_rows?.toLocaleString()}</td>
                     <td className="py-2">
-                      {task.result?.quality_report?.overall_quality || 
-                       (task.status === 'COMPLETED' ? 'Good' : '-')}
+                      {task.quality_report?.overall_score?.overall_quality_score?.toFixed(2) ||
+                       (task.status === 'completed' ? 'Good' : '-')}
                     </td>
                     <td className="py-2 text-xs text-gray-500">
                       {new Date(task.created_at).toLocaleDateString()}
                     </td>
                     <td className="py-2">
-                      {task.status === 'COMPLETED' && task.result && (
-                        <a
-                          href={`http://localhost:8000${task.result.download_url}`}
-                          className="text-blue-600 hover:text-blue-700 text-xs"
-                        >
-                          Download
-                        </a>
+                      {task.status === 'completed' && (
+                        <div className="flex items-center space-x-2">
+                          <a
+                            href={`http://localhost:8000/download/${task.task_id || task.id}`}
+                            className="text-blue-600 hover:text-blue-700 text-xs"
+                          >
+                            Data
+                          </a>
+                          <a
+                            href={`http://localhost:8000/download/report/${task.task_id || task.id}`}
+                            className="text-gray-600 hover:text-gray-700 text-xs"
+                          >
+                            Report
+                          </a>
+                        </div>
                       )}
                     </td>
                   </tr>
@@ -247,4 +264,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-

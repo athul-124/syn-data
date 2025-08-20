@@ -1,0 +1,16 @@
+age,income,category,experience_years,department,salary_band,performance_score,location
+25,50000,A,2,Engineering,Junior,8.5,San Francisco
+30,65000,B,5,Marketing,Mid,7.2,New York
+35,80000,A,8,Engineering,Senior,9.1,Seattle
+28,55000,C,3,Sales,Junior,6.8,Austin
+42,95000,B,12,Engineering,Senior,8.9,San Francisco
+33,70000,A,6,Marketing,Mid,7.8,Chicago
+29,58000,C,4,Sales,Mid,7.5,Denver
+38,85000,B,10,Engineering,Senior,8.7,Boston
+26,52000,A,1,Marketing,Junior,6.9,Portland
+45,110000,C,15,Engineering,Principal,9.3,San Francisco
+31,68000,B,7,Sales,Mid,8.1,Miami
+27,54000,A,2,Marketing,Junior,7.0,Nashville
+39,88000,C,11,Engineering,Senior,8.8,Los Angeles
+34,72000,B,6,Sales,Mid,7.6,Phoenix
+41,92000,A,13,Engineering,Senior,9.0,San Diego

@@ -23,7 +23,7 @@ const useStore = create((set, get) => ({
   setLoading: (loading) => set({ loading }),
   setError: (error) => set({ error }),
   
-  // File upload
+  // File upload with increased timeout and better error handling
   uploadFile: async (file) => {
     set({ loading: true, error: null });
     
@@ -35,7 +35,11 @@ const useStore = create((set, get) => ({
       
       const response = await axios.post(`${API_BASE}/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
-        timeout: 30000 // Increase timeout
+        timeout: 120000, // Increase to 2 minutes
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          console.log(`Upload progress: ${percentCompleted}%`);
+        }
       });
       
       console.log('Upload response:', response.data);
@@ -52,16 +56,28 @@ const useStore = create((set, get) => ({
         message: error.message,
         response: error.response?.data,
         status: error.response?.status,
-        statusText: error.response?.statusText
+        statusText: error.response?.statusText,
+        code: error.code
       });
       
-      const errorMessage = error.response?.data?.detail || 
-                          error.response?.data?.message || 
-                          error.message || 
-                          'Upload failed';
+      let errorMessage = 'Upload failed';
+      
+      if (error.code === 'ECONNABORTED') {
+        errorMessage = 'Upload timed out. The file might be too large or the server is slow.';
+      } else if (error.code === 'ERR_NETWORK') {
+        errorMessage = 'Network error. Check if the backend is running on port 8000.';
+      } else if (error.response?.status === 413) {
+        errorMessage = 'File too large. Maximum size is 100MB.';
+      } else if (error.response?.data?.detail) {
+        errorMessage = error.response.data.detail;
+      } else if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
       
       set({ 
-        error: 'Upload failed: ' + errorMessage,
+        error: errorMessage,
         loading: false 
       });
       throw error;
@@ -92,16 +108,20 @@ const useStore = create((set, get) => ({
     set({ loading: true, error: null });
     
     try {
+      console.log('🚀 Starting generation with:', { fileId, nRows, targetColumn });
+      
       const formData = new FormData();
       formData.append('file_id', fileId);
       formData.append('n_rows', nRows.toString());
       formData.append('target_column', targetColumn);
       
+      console.log('📤 Sending request to /generate-async');
       const response = await axios.post(`${API_BASE}/generate-async`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       
       const task = response.data;
+      console.log('✅ Generation response:', task);
       
       set(state => ({
         currentTask: task,
@@ -111,6 +131,13 @@ const useStore = create((set, get) => ({
       
       return task;
     } catch (error) {
+      console.error('❌ Generation failed:', error);
+      console.error('Error details:', {
+        status: error.response?.status,
+        data: error.response?.data,
+        message: error.message
+      });
+      
       const errorMessage = error.response?.data?.detail || 'Generation failed';
       set({ error: errorMessage, loading: false });
       throw error;
@@ -120,19 +147,21 @@ const useStore = create((set, get) => ({
   // Poll task status
   pollTaskStatus: async (taskId) => {
     try {
+      console.log(`🔄 Polling task: ${taskId}`);
       const response = await axios.get(`${API_BASE}/tasks/${taskId}/status`);
       const updatedTask = response.data;
       
       set(state => ({
         generationTasks: state.generationTasks.map(task => 
-          task.id === taskId ? updatedTask : task
+          (task.task_id === taskId || task.id === taskId) ? updatedTask : task
         ),
-        currentTask: state.currentTask?.id === taskId ? updatedTask : state.currentTask
+        currentTask: (state.currentTask?.task_id === taskId || state.currentTask?.id === taskId) ? updatedTask : state.currentTask
       }));
       
       return updatedTask;
     } catch (error) {
       console.error('Failed to poll task status:', error);
+      return null;
     }
   },
   
@@ -150,19 +179,27 @@ const useStore = create((set, get) => ({
   // Check task status
   checkTaskStatus: async (taskId) => {
     try {
+      console.log(`🔍 Checking status for task: ${taskId}`);
       const response = await axios.get(`${API_BASE}/tasks/${taskId}/status`);
       const updatedTask = response.data;
+      
+      console.log(`✅ Task status response:`, updatedTask);
       
       set(state => ({
         currentTask: state.currentTask?.task_id === taskId ? updatedTask : state.currentTask,
         generationTasks: state.generationTasks.map(task => 
-          task.task_id === taskId ? updatedTask : task
+          (task.task_id === taskId || task.id === taskId) ? updatedTask : task
         )
       }));
       
       return updatedTask;
     } catch (error) {
       console.error('Failed to check task status:', error);
+      console.error('Error details:', {
+        status: error.response?.status,
+        data: error.response?.data,
+        url: error.config?.url
+      });
       throw error;
     }
   },
@@ -193,6 +230,9 @@ const useStore = create((set, get) => ({
 }));
 
 export default useStore;
+
+
+
 
 
 

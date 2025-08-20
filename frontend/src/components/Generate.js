@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Play, Download, FileText, BarChart3, Clock, CheckCircle, XCircle } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import useStore from '../store/useStore';
+import axios from 'axios';
+
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000';
 
 const Generate = () => {
   const { 
@@ -22,21 +25,40 @@ const Generate = () => {
 
   // Poll for task updates
   useEffect(() => {
-    if (currentTask && (currentTask.status === 'PENDING' || currentTask.status === 'RUNNING')) {
+    if (currentTask && (currentTask.status === 'PENDING' || currentTask.status === 'RUNNING' || currentTask.status === 'processing' || currentTask.status === 'queued')) {
+      console.log(`🔄 Starting polling for task:`, currentTask);
+      
       const interval = setInterval(async () => {
         try {
-          const updatedTask = await checkTaskStatus(currentTask.task_id || currentTask.id);
-          if (updatedTask.status === 'COMPLETED') {
+          const taskId = currentTask.task_id || currentTask.id;
+          console.log(`🔄 Polling task: ${taskId}`);
+          
+          const updatedTask = await checkTaskStatus(taskId);
+          console.log(`📊 Updated task:`, updatedTask);
+          
+          if (updatedTask.status === 'completed') {
             toast.success('Generation completed!');
-          } else if (updatedTask.status === 'FAILED') {
-            toast.error('Generation failed');
+            clearInterval(interval);
+          } else if (updatedTask.status === 'failed') {
+            toast.error(`Generation failed: ${updatedTask.error || 'Unknown error'}`);
+            clearInterval(interval);
           }
         } catch (error) {
           console.error('Failed to check task status:', error);
+          
+          // If task not found (404), stop polling
+          if (error.response?.status === 404) {
+            console.log('🛑 Task not found, stopping polling');
+            toast.error('Task not found - stopping status checks');
+            clearInterval(interval);
+          }
         }
       }, 2000);
       
-      return () => clearInterval(interval);
+      return () => {
+        console.log('🛑 Clearing polling interval');
+        clearInterval(interval);
+      };
     }
   }, [currentTask, checkTaskStatus]);
 
@@ -77,11 +99,11 @@ const Generate = () => {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'COMPLETED':
+      case 'completed':
         return <CheckCircle className="text-green-500" size={20} />;
-      case 'FAILED':
+      case 'failed':
         return <XCircle className="text-red-500" size={20} />;
-      case 'RUNNING':
+      case 'processing':
         return <Clock className="text-blue-500 animate-spin" size={20} />;
       default:
         return <Clock className="text-gray-500" size={20} />;
@@ -91,10 +113,25 @@ const Generate = () => {
   const handleRefreshTasks = async () => {
     if (currentTask) {
       try {
-        await checkTaskStatus(currentTask.task_id || currentTask.id);
+        const taskId = currentTask.task_id || currentTask.id;
+        console.log(`🔄 Manual refresh for task: ${taskId}`);
+        await checkTaskStatus(taskId);
+        toast.success('Task status refreshed');
       } catch (error) {
+        console.error('Failed to refresh task status:', error);
         toast.error('Failed to refresh task status');
       }
+    }
+  };
+
+  const handleDebugTasks = async () => {
+    try {
+      const response = await axios.get(`${API_BASE}/debug/all-tasks`);
+      console.log('🐛 Debug tasks:', response.data);
+      toast.success('Check console for task debug info');
+    } catch (error) {
+      console.error('Debug failed:', error);
+      toast.error('Debug failed');
     }
   };
 
@@ -262,35 +299,44 @@ const Generate = () => {
             )}
           </div>
 
-          {currentTask.status === 'RUNNING' && (
+          {currentTask.status === 'processing' && (
             <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
-              <div 
+              <div
                 className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${currentTask.progress}%` }}
               ></div>
             </div>
           )}
 
-          {currentTask.status === 'COMPLETED' && currentTask.result && (
+          {currentTask.status === 'completed' && (
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-green-50 rounded-md">
                 <div>
                   <p className="font-medium text-green-800">Generation Complete!</p>
                   <p className="text-sm text-green-600">
-                    Generated {currentTask.result.generated_rows} rows
+                    Generated {currentTask.n_rows} rows
                   </p>
                 </div>
-                <a
-                  href={`http://localhost:8000${currentTask.result.download_url}`}
-                  className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-                >
-                  <Download size={16} />
-                  <span>Download</span>
-                </a>
+                <div className="flex items-center space-x-2">
+                  <a
+                    href={`http://localhost:8000/download/${currentTask.task_id || currentTask.id}`}
+                    className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+                  >
+                    <Download size={16} />
+                    <span>Data</span>
+                  </a>
+                  <a
+                    href={`http://localhost:8000/download/report/${currentTask.task_id || currentTask.id}`}
+                    className="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
+                  >
+                    <FileText size={16} />
+                    <span>Report</span>
+                  </a>
+                </div>
               </div>
 
               {/* Quality Report */}
-              {currentTask.result.quality_report && (
+              {currentTask.quality_report && (
                 <div className="p-4 bg-gray-50 rounded-md">
                   <h4 className="font-medium mb-2 flex items-center space-x-2">
                     <BarChart3 size={16} />
@@ -300,37 +346,25 @@ const Generate = () => {
                     <div>
                       <p className="text-gray-600">Overall Score</p>
                       <p className="font-medium">
-                        {currentTask.result.quality_report.summary?.overall_score ? 
-                          `${(currentTask.result.quality_report.summary.overall_score * 100).toFixed(1)}%` :
-                          currentTask.result.quality_report.overall_quality || 'Good'
-                        }
+                        {currentTask.quality_report.overall_score?.overall_quality_score?.toFixed(2)}
                       </p>
                     </div>
                     <div>
                       <p className="text-gray-600">Fidelity</p>
                       <p className="font-medium">
-                        {currentTask.result.quality_report.fidelity_metrics?.summary_scores?.overall_fidelity ? 
-                          `${(currentTask.result.quality_report.fidelity_metrics.summary_scores.overall_fidelity * 100).toFixed(1)}%` :
-                          'N/A'
-                        }
+                        {currentTask.quality_report.overall_score?.fidelity_score?.toFixed(2)}
                       </p>
                     </div>
                     <div>
                       <p className="text-gray-600">Utility</p>
                       <p className="font-medium">
-                        {currentTask.result.quality_report.utility_metrics?.utility_score ? 
-                          `${(currentTask.result.quality_report.utility_metrics.utility_score * 100).toFixed(1)}%` :
-                          'N/A'
-                        }
+                        {currentTask.quality_report.overall_score?.utility_score?.toFixed(2)}
                       </p>
                     </div>
                     <div>
                       <p className="text-gray-600">Privacy</p>
                       <p className="font-medium">
-                        {currentTask.result.quality_report.privacy_metrics?.privacy_score ? 
-                          `${(currentTask.result.quality_report.privacy_metrics.privacy_score * 100).toFixed(1)}%` :
-                          'N/A'
-                        }
+                        {currentTask.quality_report.overall_score?.privacy_score?.toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -339,7 +373,7 @@ const Generate = () => {
             </div>
           )}
 
-          {currentTask.status === 'FAILED' && (
+          {currentTask.status === 'failed' && (
             <div className="p-4 bg-red-50 rounded-md">
               <p className="text-red-800 font-medium">Generation Failed</p>
               <p className="text-red-600 text-sm">{currentTask.error}</p>
@@ -370,38 +404,52 @@ const Generate = () => {
                     <p className="text-sm text-gray-500">
                       {task.n_rows} rows • Status: {task.status} • {new Date(task.created_at).toLocaleString()}
                     </p>
-                    {task.status === 'RUNNING' && (
-                      <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-blue-600 h-2 rounded-full transition-all duration-300" 
-                          style={{ width: `${task.progress || 0}%` }}
-                        ></div>
-                      </div>
-                    )}
+                {task.status === 'processing' && (
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                    <div
+                      className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                      style={{ width: `${task.progress || 0}%` }}
+                    ></div>
                   </div>
-                </div>
-                
-                {task.status === 'COMPLETED' && task.result && (
-                  <a
-                    href={`http://localhost:8000${task.result.download_url}`}
-                    className="flex items-center space-x-1 px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
-                  >
-                    <Download size={14} />
-                    <span>Download</span>
-                  </a>
                 )}
               </div>
+            </div>
+            
+            {task.status === 'completed' && (
+              <div className="flex items-center space-x-2">
+                <a
+                  href={`http://localhost:8000/download/${task.task_id || task.id}`}
+                  className="flex items-center space-x-1 px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
+                >
+                  <Download size={14} />
+                  <span>Data</span>
+                </a>
+                <a
+                  href={`http://localhost:8000/download/report/${task.task_id || task.id}`}
+                  className="flex items-center space-x-1 px-3 py-1 bg-gray-600 text-white text-sm rounded hover:bg-gray-700"
+                >
+                  <FileText size={14} />
+                  <span>Report</span>
+                </a>
+              </div>
+            )}
+          </div>
             ))}
           </div>
         </div>
       )}
+
+      {/* Debug Button */}
+      <div className="mt-6">
+        <button
+          onClick={handleDebugTasks}
+          className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
+        >
+          Debug Tasks
+        </button>
+      </div>
     </div>
   );
 };
 
 export default Generate;
-
-
-
-
-
