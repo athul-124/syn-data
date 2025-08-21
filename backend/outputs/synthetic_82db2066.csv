@@ -1,0 +1,101 @@
+age,income,category,experience_years,department,salary_band,performance_score,location
+29,59413,C,4,Engineering,Mid,8.93511518377938,San Francisco
+42,95263,A,14,Sales,Senior,9.3,Austin
+40,83686,C,10,Engineering,Senior,8.495849874726513,Los Angeles
+32,65757,C,6,Engineering,Senior,7.250608150182656,San Francisco
+39,86364,A,11,Sales,Junior,8.36739266190802,Chicago
+27,54994,A,2,Marketing,Mid,7.351147442963313,San Francisco
+38,85366,A,11,Sales,Senior,8.435437707430609,Los Angeles
+35,76208,A,8,Marketing,Mid,7.933059177472822,Boston
+34,77404,B,8,Sales,Principal,8.934568171647689,Austin
+25,50000,B,1,Engineering,Senior,6.8,San Francisco
+32,69905,C,6,Marketing,Mid,8.391621966948072,Austin
+31,68058,B,5,Engineering,Junior,7.222851246013288,San Diego
+40,87269,A,11,Sales,Senior,7.585436197642557,Portland
+26,53317,A,2,Marketing,Senior,7.666408057645929,New York
+25,50000,A,1,Engineering,Senior,7.197882143594853,San Diego
+37,85813,B,10,Engineering,Senior,9.3,Los Angeles
+38,91766,A,12,Engineering,Mid,9.3,Austin
+26,53990,A,2,Sales,Junior,8.09934383267631,Chicago
+37,81570,B,9,Engineering,Mid,8.495665060372971,New York
+39,87995,B,10,Sales,Mid,8.946720313954778,Miami
+44,100979,A,14,Marketing,Mid,8.729990937857519,San Francisco
+42,91097,C,11,Sales,Junior,8.220472125469426,San Francisco
+44,108095,A,15,Marketing,Mid,9.3,Los Angeles
+33,73771,A,8,Marketing,Senior,8.601299826265478,Portland
+35,77787,B,8,Marketing,Mid,8.336835791434797,Phoenix
+27,52571,C,1,Engineering,Senior,6.8,Nashville
+42,97292,A,13,Marketing,Junior,9.170455994073084,Los Angeles
+33,69458,B,6,Sales,Junior,7.472169570096538,Portland
+41,91573,A,12,Marketing,Senior,8.659058936321031,Miami
+35,79287,A,9,Marketing,Junior,8.511945447094094,Denver
+25,50000,B,1,Engineering,Senior,6.8,Seattle
+41,95611,A,12,Engineering,Senior,9.000942313713438,Phoenix
+25,50000,A,1,Sales,Senior,6.8,San Francisco
+31,64866,A,6,Sales,Mid,8.177758970230943,San Francisco
+45,104926,A,15,Engineering,Junior,9.11058907235371,San Francisco
+32,65044,A,5,Marketing,Junior,6.970459469252973,Miami
+37,78937,B,10,Engineering,Senior,7.356407196697392,New York
+40,88340,B,11,Sales,Junior,7.8317387064858135,Portland
+43,104171,C,15,Marketing,Mid,9.3,Portland
+45,107194,C,15,Sales,Senior,9.3,Austin
+30,62022,A,6,Sales,Junior,7.762453997776514,San Francisco
+39,88835,A,11,Engineering,Junior,8.907257690124341,Miami
+41,93006,B,12,Marketing,Junior,8.282069175865464,San Francisco
+32,70886,C,6,Sales,Junior,7.911962469183668,Miami
+43,101217,A,13,Sales,Junior,8.879496719774506,Chicago
+39,85972,A,11,Marketing,Mid,8.509801957532138,Los Angeles
+40,93236,B,11,Engineering,Junior,8.465272950977239,San Diego
+43,103269,A,15,Engineering,Mid,9.3,New York
+38,87708,B,12,Marketing,Senior,9.167195191454825,Denver
+37,80141,B,9,Marketing,Junior,8.449577427702211,Los Angeles
+40,88840,B,11,Marketing,Junior,8.537609988689105,San Francisco
+36,80893,B,7,Marketing,Senior,8.28266806499153,Los Angeles
+40,93247,A,11,Sales,Mid,8.805370479281121,San Francisco
+36,82080,C,8,Engineering,Senior,8.907003268521784,Portland
+38,82390,B,9,Marketing,Junior,8.469343041481494,San Francisco
+45,108930,B,15,Engineering,Junior,9.3,Seattle
+30,66743,A,5,Engineering,Senior,7.599933943936027,Portland
+25,50000,B,1,Sales,Senior,6.8,Portland
+25,50000,A,1,Marketing,Mid,7.5796269145331285,San Francisco
+32,67628,C,6,Marketing,Principal,7.03480775936678,Austin
+42,98223,A,14,Marketing,Mid,9.099646781445305,Chicago
+29,61317,B,5,Sales,Mid,7.984958208024729,Denver
+30,64035,A,5,Sales,Senior,7.991525910449309,San Francisco
+25,50000,A,1,Engineering,Mid,7.0018148831299145,Seattle
+40,90260,A,11,Sales,Mid,8.714071304496056,Chicago
+42,95227,A,13,Sales,Junior,8.821127976506457,San Diego
+42,95933,B,13,Marketing,Junior,9.148216461154583,Austin
+30,63930,B,5,Marketing,Junior,8.774770727221467,Denver
+37,86959,B,9,Engineering,Senior,8.927413280055097,New York
+32,67051,B,6,Marketing,Mid,8.43505005703268,Chicago
+34,75903,B,8,Engineering,Mid,8.35536355453935,San Francisco
+28,58568,C,5,Sales,Mid,7.856835393650534,Chicago
+25,50000,A,1,Marketing,Mid,6.8,Austin
+30,62483,A,4,Sales,Senior,7.358871148051493,Portland
+45,109289,B,14,Sales,Junior,8.90108580365794,New York
+35,77771,A,9,Sales,Mid,8.021739064025262,Phoenix
+39,93103,C,11,Marketing,Junior,8.465228950416103,Boston
+32,64190,A,4,Sales,Mid,7.638583523359142,San Diego
+25,52285,A,2,Marketing,Junior,8.461485800520967,Seattle
+42,88955,B,11,Sales,Junior,8.017805210812824,Chicago
+25,50000,B,1,Engineering,Mid,7.118971261810371,Portland
+40,88070,A,11,Sales,Mid,8.192129308191166,Portland
+31,69530,C,5,Marketing,Principal,7.864114398925592,Chicago
+25,50000,A,2,Engineering,Senior,7.606056988455303,Nashville
+43,101665,A,13,Engineering,Principal,9.3,San Francisco
+38,84117,C,10,Engineering,Junior,8.10448957660305,Portland
+38,81175,A,9,Engineering,Senior,7.546987582117571,San Francisco
+33,72682,B,7,Engineering,Senior,8.071284351148021,Nashville
+45,103303,B,13,Sales,Mid,8.727111303153135,Chicago
+45,110000,C,15,Sales,Mid,9.3,Denver
+45,110000,A,15,Engineering,Mid,9.3,San Francisco
+25,50000,A,1,Sales,Mid,6.8,Los Angeles
+27,55478,A,2,Engineering,Mid,8.033410514037914,Boston
+33,74968,C,7,Engineering,Principal,8.795585605000618,Austin
+30,68353,B,5,Engineering,Senior,7.651832826342682,Denver
+32,71238,C,7,Engineering,Senior,8.057672676612698,Boston
+33,66868,C,7,Engineering,Senior,8.254207379950403,Seattle
+44,100476,A,14,Engineering,Junior,8.615463885886143,San Francisco
+30,65470,C,5,Sales,Senior,8.157954089840228,Phoenix
+45,108932,A,15,Sales,Mid,9.3,Chicago
