@@ -9,6 +9,7 @@ from concurrent.futures import ThreadPoolExecutor
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from typing import Optional, Dict, Any
@@ -26,13 +27,18 @@ executor = ThreadPoolExecutor(max_workers=2)
 
 app = FastAPI(title="SynData Plus API", version="2.0")
 
-# Enhanced CORS middleware
+# Secure CORS middleware - only allow same origin in production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for Replit environment
-    allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=["*"],
+    allow_origins=[
+        "http://localhost:3000",  # Development
+        "http://localhost:5000",  # Production
+        "https://*.replit.dev",   # Replit domains
+        "https://*.replit.app",   # Replit apps
+    ],
+    allow_credentials=False,  # Disable credentials for security
+    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
 )
 
 @app.exception_handler(StarletteHTTPException)
@@ -449,25 +455,43 @@ os.makedirs("outputs", exist_ok=True)
 
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
-    """Upload CSV file for processing"""
+    """Upload CSV file for processing with security validation"""
     try:
-        # Validate file type
-        if not file.filename.endswith('.csv'):
+        # Security: Validate file type and size
+        if not file.filename or not file.filename.endswith('.csv'):
             raise HTTPException(status_code=400, detail="Only CSV files are allowed")
         
-        # Generate unique file ID
+        # Security: Limit file size (50MB max)
+        MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
+        content = await file.read()
+        if len(content) > MAX_FILE_SIZE:
+            raise HTTPException(status_code=413, detail="File too large. Maximum size is 50MB")
+        
+        # Security: Validate filename characters
+        import re
+        if not re.match(r'^[a-zA-Z0-9._-]+\.csv$', file.filename):
+            raise HTTPException(status_code=400, detail="Invalid filename. Only alphanumeric characters, dots, hyphens and underscores allowed")
+        
+        # Generate secure unique file ID
         file_id = str(uuid.uuid4())[:8]
-        file_extension = file.filename.split('.')[-1]
         filename = f"{file_id}_{file.filename}"
         file_path = f"uploads/{filename}"
         
-        # Save file
-        content = await file.read()
+        # Save file securely
         with open(file_path, "wb") as f:
             f.write(content)
         
         # Read and validate CSV
-        df = pd.read_csv(file_path)
+        try:
+            df = pd.read_csv(file_path)
+            if len(df) == 0:
+                raise HTTPException(status_code=400, detail="CSV file is empty")
+            if len(df) > 1000000:  # 1M rows max
+                raise HTTPException(status_code=413, detail="Dataset too large. Maximum 1 million rows allowed")
+        except pd.errors.EmptyDataError:
+            raise HTTPException(status_code=400, detail="Invalid CSV file or empty data")
+        except Exception as csv_error:
+            raise HTTPException(status_code=400, detail=f"Invalid CSV format: {str(csv_error)}")
         
         return {
             "file_id": file_id,
@@ -478,7 +502,15 @@ async def upload_file(file: UploadFile = File(...)):
             "message": "File uploaded successfully"
         }
         
+    except HTTPException:
+        # Clean up file on validation failure
+        if 'file_path' in locals() and os.path.exists(file_path):
+            os.remove(file_path)
+        raise
     except Exception as e:
+        # Clean up file on error
+        if 'file_path' in locals() and os.path.exists(file_path):
+            os.remove(file_path)
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 @app.post("/preview")
@@ -791,3 +823,31 @@ async def generate_synthetic_endpoint(
     except Exception as e:
         print(f"❌ Generation failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Generation failed: {str(e)}")
+
+# Mount static files for production deployment
+# Check if build directory exists (for production)
+if os.path.exists("../frontend/build"):
+    print("📁 Serving React build from ../frontend/build")
+    app.mount("/static", StaticFiles(directory="../frontend/build/static"), name="static")
+    
+    @app.get("/{full_path:path}")
+    async def serve_react_app(full_path: str):
+        """Serve React app for all non-API routes"""
+        # API routes should be handled by FastAPI, everything else goes to React
+        if full_path.startswith(("api/", "upload", "tasks", "preview", "generate-async", "download", "health", "docs", "openapi.json")):
+            raise HTTPException(status_code=404, detail="API endpoint not found")
+        
+        # Serve index.html for all other routes (React Router will handle them)
+        return FileResponse("../frontend/build/index.html")
+    
+    @app.get("/")
+    async def root():
+        """Serve React app root"""
+        return FileResponse("../frontend/build/index.html")
+else:
+    print("⚠️ No React build found, API-only mode")
+    
+    @app.get("/")
+    async def root():
+        """Root endpoint for API-only mode"""
+        return {"message": "SynData API", "docs": "/docs", "health": "/health"}

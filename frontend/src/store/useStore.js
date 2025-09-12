@@ -1,7 +1,10 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_BACKEND_URL || `https://${process.env.REPLIT_DEV_DOMAIN || '7414eacd-dce4-4151-9146-c6512c89d7a0-00-18om4ild42nry.pike.replit.dev'}:8000`;
+// Use relative URLs for production deployment - FastAPI serves both frontend and API
+const API_BASE = process.env.NODE_ENV === 'development' 
+  ? 'http://localhost:8000'  // Development mode - separate servers
+  : '';  // Production mode - same origin (FastAPI serves both)
 
 const useStore = create((set, get) => ({
   // Auth state
