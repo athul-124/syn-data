@@ -14,7 +14,7 @@ const Upload = () => {
   useEffect(() => {
     const checkBackend = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/health');
+        const response = await axios.get('http://localhost:5000/health');
         console.log('Backend health:', response.data);
         setBackendStatus('connected');
       } catch (error) {

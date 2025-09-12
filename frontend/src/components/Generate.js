@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import useStore from '../store/useStore';
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000';
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000';
 
 const Generate = () => {
   const { 

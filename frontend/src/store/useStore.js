@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Use relative URLs for production deployment - FastAPI serves both frontend and API
 const API_BASE = process.env.NODE_ENV === 'development' 
-  ? 'http://localhost:8000'  // Development mode - separate servers
+  ? 'http://localhost:5000'  // Development mode - same port as production server
   : '';  // Production mode - same origin (FastAPI serves both)
 
 const useStore = create((set, get) => ({
