@@ -824,11 +824,19 @@ async def generate_synthetic_endpoint(
         print(f"❌ Generation failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Generation failed: {str(e)}")
 
+# Import StaticFiles for serving React build
+from fastapi.staticfiles import StaticFiles
+
 # Mount static files for production deployment
 # Check if build directory exists (for production)
 if os.path.exists("../frontend/build"):
     print("📁 Serving React build from ../frontend/build")
     app.mount("/static", StaticFiles(directory="../frontend/build/static"), name="static")
+    
+    @app.get("/")
+    async def root():
+        """Serve React app root"""
+        return FileResponse("../frontend/build/index.html")
     
     @app.get("/{full_path:path}")
     async def serve_react_app(full_path: str):
@@ -838,11 +846,6 @@ if os.path.exists("../frontend/build"):
             raise HTTPException(status_code=404, detail="API endpoint not found")
         
         # Serve index.html for all other routes (React Router will handle them)
-        return FileResponse("../frontend/build/index.html")
-    
-    @app.get("/")
-    async def root():
-        """Serve React app root"""
         return FileResponse("../frontend/build/index.html")
 else:
     print("⚠️ No React build found, API-only mode")
