@@ -707,10 +707,7 @@ def analyze_dpdp_compliance(df: pd.DataFrame) -> list:
     
     return warnings
 
-@app.get("/")
-async def root():
-    """Root endpoint"""
-    return {"message": "SynData API", "docs": "/docs"}
+# Root endpoint is handled conditionally below based on React build availability
 
 @app.get("/health")
 async def health_check():
@@ -829,14 +826,15 @@ from fastapi.staticfiles import StaticFiles
 
 # Mount static files for production deployment
 # Check if build directory exists (for production)
-if os.path.exists("../frontend/build"):
-    print("📁 Serving React build from ../frontend/build")
-    app.mount("/static", StaticFiles(directory="../frontend/build/static"), name="static")
+frontend_build_path = "../frontend/build"
+if os.path.exists(frontend_build_path):
+    print(f"📁 Serving React build from {frontend_build_path}")
+    app.mount("/static", StaticFiles(directory=f"{frontend_build_path}/static"), name="static")
     
     @app.get("/")
     async def root():
         """Serve React app root"""
-        return FileResponse("../frontend/build/index.html")
+        return FileResponse(f"{frontend_build_path}/index.html")
     
     @app.get("/{full_path:path}")
     async def serve_react_app(full_path: str):
@@ -846,7 +844,7 @@ if os.path.exists("../frontend/build"):
             raise HTTPException(status_code=404, detail="API endpoint not found")
         
         # Serve index.html for all other routes (React Router will handle them)
-        return FileResponse("../frontend/build/index.html")
+        return FileResponse(f"{frontend_build_path}/index.html")
 else:
     print("⚠️ No React build found, API-only mode")
     
