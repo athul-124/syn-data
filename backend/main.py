@@ -6,13 +6,18 @@ import asyncio
 import pandas as pd
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
-from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request
+from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from typing import Optional, Dict, Any
+
+# Import database models and configuration
+from models import TaskManager, FileManager, init_db, get_db
+from config import settings, validate_config, is_allowed_file_type, get_max_file_size_bytes
+from rate_limiter import upload_rate_limit, generation_rate_limit, api_rate_limit
 
 # Import synthetic data generation functions
 try:
@@ -21,24 +26,81 @@ except ImportError:
     print("⚠️ CTGAN not available, using fallback methods")
     CTGAN = None
 
-# Global variables for task management
-generation_tasks = {}
-executor = ThreadPoolExecutor(max_workers=2)
+# Initialize database and task management
+init_db()
+task_manager = TaskManager()
+file_manager = FileManager()
+executor = ThreadPoolExecutor(max_workers=settings.max_workers)
 
-app = FastAPI(title="SynData Plus API", version="2.0")
+app = FastAPI(title=settings.app_name, version=settings.app_version)
 
-# Secure CORS middleware - only allow same origin in production
+# Initialize configuration and validate setup
+validate_config()
+
+# Add security headers middleware
+from starlette.middleware.trustedhost import TrustedHostMiddleware
+from starlette.middleware.gzip import GZipMiddleware
+from starlette.middleware import Middleware
+from starlette.middleware.httpsredirect import HTTPSRedirectMiddleware
+
+# Add security middleware stack
+app.add_middleware(
+    TrustedHostMiddleware, 
+    allowed_hosts=["localhost", "127.0.0.1", "*.replit.app", "*.repl.co"]
+)
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+# Add HTTPS redirect middleware if force_https is enabled
+if getattr(settings, 'force_https', False):
+    app.add_middleware(HTTPSRedirectMiddleware)
+
+# Add proxy headers middleware last (outermost) so it runs first
+if getattr(settings, 'trust_proxy_headers', True):
+    from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
+    
+    app.add_middleware(
+        ProxyHeadersMiddleware,
+        trusted_hosts=settings.trusted_proxies
+    )
+
+# Add comprehensive security headers via custom middleware
+@app.middleware("http")
+async def add_security_headers(request, call_next):
+    """Add comprehensive security headers"""
+    response = await call_next(request)
+    
+    # Core security headers
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    csp = getattr(settings, 'csp', "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-ancestors 'none';")
+    response.headers["Content-Security-Policy"] = csp
+    
+    # HSTS when serving over HTTPS or force_https is enabled
+    if getattr(settings, 'force_https', False) or request.url.scheme == "https":
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains; preload"
+    
+    return response
+
+# Configure CORS middleware with regex for dynamic subdomains
+import re
+
+# Static origins for localhost development
+static_origins = ["http://localhost:3000", "http://localhost:5000"]
+
+# Regex pattern for dynamic Replit subdomains (correct domains)
+replit_regex = r"^https://([a-z0-9-]+\.)*(replit\.app|repl\.co)$"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",  # Development
-        "http://localhost:5000",  # Production
-        "https://*.replit.dev",   # Replit domains
-        "https://*.replit.app",   # Replit apps
-    ],
-    allow_credentials=False,  # Disable credentials for security
+    allow_origins=static_origins,
+    allow_origin_regex=replit_regex,
+    allow_credentials=settings.cors_allow_credentials,
     allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
-    allow_headers=["Content-Type", "Authorization"],
+    allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
 )
 
 @app.exception_handler(StarletteHTTPException)
@@ -56,12 +118,12 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     )
 
 @app.get("/health")
-async def health_check():
-    """Health check endpoint"""
+async def health_check(_: None = Depends(api_rate_limit)):
+    """Health check endpoint with rate limiting"""
     return {
         "status": "healthy",
         "timestamp": pd.Timestamp.now().isoformat(),
-        "version": "2.0",
+        "version": settings.app_version,
         "message": "Backend is running successfully"
     }
 
@@ -449,23 +511,25 @@ async def generate_async(df: pd.DataFrame, n_rows: int, target_column: str = Non
     
     return synth, quality_report
 
-# Create necessary directories
-os.makedirs("uploads", exist_ok=True)
-os.makedirs("outputs", exist_ok=True)
+# Note: Directories are now created automatically by centralized config system when needed
 
 @app.post("/upload")
-async def upload_file(file: UploadFile = File(...)):
-    """Upload CSV file for processing with security validation"""
+async def upload_file(file: UploadFile = File(...), _: None = Depends(upload_rate_limit)):
+    """Upload CSV file for processing with enhanced security validation"""
     try:
-        # Security: Validate file type and size
-        if not file.filename or not file.filename.endswith('.csv'):
-            raise HTTPException(status_code=400, detail="Only CSV files are allowed")
+        # Enhanced security: Validate file type using centralized config
+        if not file.filename:
+            raise HTTPException(status_code=400, detail="No filename provided")
+            
+        content_type = file.content_type or "text/csv"
+        if not is_allowed_file_type(content_type) and not file.filename.endswith('.csv'):
+            raise HTTPException(status_code=400, detail=f"File type not allowed. Supported types: {', '.join(settings.allowed_file_types)}")
         
-        # Security: Limit file size (50MB max)
-        MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
+        # Enhanced security: Use centralized file size limits
         content = await file.read()
-        if len(content) > MAX_FILE_SIZE:
-            raise HTTPException(status_code=413, detail="File too large. Maximum size is 50MB")
+        max_size = get_max_file_size_bytes()
+        if len(content) > max_size:
+            raise HTTPException(status_code=413, detail=f"File too large. Maximum size is {settings.max_file_size_mb}MB")
         
         # Security: Validate filename characters
         import re
@@ -475,7 +539,10 @@ async def upload_file(file: UploadFile = File(...)):
         # Generate secure unique file ID
         file_id = str(uuid.uuid4())[:8]
         filename = f"{file_id}_{file.filename}"
-        file_path = f"uploads/{filename}"
+        file_path = os.path.join(settings.upload_dir, filename)
+        
+        # Ensure upload directory exists
+        os.makedirs(settings.upload_dir, exist_ok=True)
         
         # Save file securely
         with open(file_path, "wb") as f:
@@ -486,12 +553,23 @@ async def upload_file(file: UploadFile = File(...)):
             df = pd.read_csv(file_path)
             if len(df) == 0:
                 raise HTTPException(status_code=400, detail="CSV file is empty")
-            if len(df) > 1000000:  # 1M rows max
-                raise HTTPException(status_code=413, detail="Dataset too large. Maximum 1 million rows allowed")
+            if len(df) > settings.max_synthetic_rows:  # Use centralized limit
+                raise HTTPException(status_code=413, detail=f"Dataset too large. Maximum {settings.max_synthetic_rows} rows allowed")
         except pd.errors.EmptyDataError:
             raise HTTPException(status_code=400, detail="Invalid CSV file or empty data")
         except Exception as csv_error:
             raise HTTPException(status_code=400, detail=f"Invalid CSV format: {str(csv_error)}")
+        
+        # Register file in database
+        file_record = file_manager.register_upload(
+            filename=filename,
+            original_filename=file.filename,
+            file_path=file_path,
+            file_size=len(content),
+            content_type=content_type,
+            columns=list(df.columns),
+            rows_count=len(df)
+        )
         
         return {
             "file_id": file_id,
@@ -499,7 +577,8 @@ async def upload_file(file: UploadFile = File(...)):
             "rows": len(df),
             "columns": list(df.columns),
             "size": len(content),
-            "message": "File uploaded successfully"
+            "message": "File uploaded and registered successfully",
+            "database_id": str(file_record.id)
         }
         
     except HTTPException:
@@ -514,7 +593,7 @@ async def upload_file(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 @app.post("/preview")
-async def generate_preview(request: Dict[str, Any]):
+async def generate_preview(request: Dict[str, Any], _: None = Depends(api_rate_limit)):
     """Generate small preview of synthetic data"""
     file_id = request.get("file_id")
     n_rows = min(request.get("n_rows", 10), 50)  # Limit preview size
@@ -540,7 +619,8 @@ async def generate_preview(request: Dict[str, Any]):
 async def generate_async_endpoint(
     file_id: str = Form(...),
     n_rows: int = Form(100),
-    target_column: str = Form("")
+    target_column: str = Form(""),
+    _: None = Depends(generation_rate_limit)
 ):
     """Start async generation task"""
     try:
@@ -554,9 +634,32 @@ async def generate_async_endpoint(
         if not file_path or not os.path.exists(file_path):
             raise HTTPException(status_code=404, detail="File not found")
         
-        # Create task
+        # Validate row count limits
+        if n_rows > settings.max_synthetic_rows:
+            raise HTTPException(status_code=400, detail=f"Too many rows requested. Maximum: {settings.max_synthetic_rows}")
+        
+        # Create task using database-backed task manager
         task_id = str(uuid.uuid4())[:8]
-        task = {
+        filename = os.path.basename(file_path)
+        config = {
+            "file_path": file_path,
+            "file_id": file_id,
+            "generation_method": "enhanced_ctgan"
+        }
+        
+        db_task = task_manager.create_task(
+            task_id=task_id,
+            filename=filename,
+            n_rows=n_rows,
+            target_column=target_column if target_column else None,
+            config=config
+        )
+        
+        # Start background task
+        asyncio.create_task(run_generation_task(task_id))
+        
+        # Return task in expected format for frontend compatibility
+        return {
             "task_id": task_id,
             "id": task_id,
             "file_path": file_path,
@@ -564,15 +667,8 @@ async def generate_async_endpoint(
             "target_column": target_column if target_column else None,
             "status": "queued",
             "progress": 0,
-            "created_at": pd.Timestamp.now().isoformat()
+            "created_at": db_task.created_at.isoformat()
         }
-        
-        generation_tasks[task_id] = task
-        
-        # Start background task
-        asyncio.create_task(run_generation_task(task_id))
-        
-        return task
         
     except HTTPException:
         raise
@@ -580,28 +676,33 @@ async def generate_async_endpoint(
         raise HTTPException(status_code=500, detail=f"Failed to start generation: {str(e)}")
 
 async def run_generation_task(task_id: str):
-    """Enhanced generation task with comprehensive quality reporting"""
+    """Enhanced generation task with comprehensive quality reporting and database persistence"""
     try:
-        task = generation_tasks[task_id]
-        task["status"] = "processing"
-        task["progress"] = 10
+        # Update task status to processing
+        task_manager.update_task_status(task_id, "running", progress=10)
+        task = task_manager.get_task(task_id)
+        if not task:
+            print(f"❌ Task {task_id} not found in database")
+            return
+        
+        file_path = task.config.get("file_path")
         
         print(f"🚀 Starting enhanced generation task {task_id}")
         
         # Load and validate data
-        df = pd.read_csv(task["file_path"])
+        df = pd.read_csv(file_path)
         print(f"📊 Loaded dataset: {df.shape}")
         
-        task["progress"] = 30
+        task_manager.update_task_status(task_id, "running", progress=30)
         
         # Generate synthetic data
         print("🔄 Generating synthetic data...")
-        synth = enhanced_synthetic_tabular(df, task["n_rows"])
-        task["progress"] = 70
+        synth = enhanced_synthetic_tabular(df, task.n_rows)
+        task_manager.update_task_status(task_id, "running", progress=70)
         
         # Create comprehensive quality report with visuals
         print("📈 Creating enhanced quality report...")
-        quality_report = create_quality_report(df, synth, task["target_column"])
+        quality_report = create_quality_report(df, synth, task.target_column)
         
         # Convert visual charts to base64 for API response
         if "visual_comparisons" in quality_report:
@@ -611,16 +712,27 @@ async def run_generation_task(task_id: str):
             )
             cleanup_temp_charts()
         
-        task["progress"] = 90
+        task_manager.update_task_status(task_id, "running", progress=90)
         
         # Save results
-        output_path = f"outputs/synthetic_{task_id}.csv"
+        output_filename = f"synthetic_{task_id}.csv"
+        output_path = os.path.join(settings.output_dir, output_filename)
+        os.makedirs(settings.output_dir, exist_ok=True)
         synth.to_csv(output_path, index=False)
         
-        task["status"] = "completed"
-        task["progress"] = 100
-        task["output_file"] = output_path
-        task["quality_report"] = quality_report
+        # Update task with results in database
+        task_manager.update_task_status(
+            task_id=task_id,
+            status="completed", 
+            progress=100,
+            result_path=output_path,
+            metrics={
+                "output_file": output_filename,
+                "quality_report": quality_report,
+                "rows_generated": len(synth),
+                "columns_count": len(synth.columns)
+            }
+        )
         
         print(f"✅ Enhanced generation task {task_id} completed successfully!")
         
@@ -629,8 +741,12 @@ async def run_generation_task(task_id: str):
         import traceback
         traceback.print_exc()
         
-        task["status"] = "failed"
-        task["error"] = str(e)
+        # Update task status to failed in database
+        task_manager.update_task_status(
+            task_id=task_id,
+            status="failed",
+            error_message=str(e)
+        )
         
         # Cleanup on failure
         try:
@@ -640,47 +756,72 @@ async def run_generation_task(task_id: str):
             pass
 
 @app.get("/tasks")
-async def get_all_tasks():
-    """Get all generation tasks"""
-    return list(generation_tasks.values())
+async def get_all_tasks(_: None = Depends(api_rate_limit)):
+    """Get all generation tasks from database"""
+    tasks = task_manager.get_all_tasks()
+    # Convert database tasks to frontend-compatible format
+    result = []
+    for task in tasks:
+        result.append({
+            "task_id": task.task_id,
+            "id": task.task_id,
+            "status": task.status,
+            "progress": task.progress,
+            "created_at": task.created_at.isoformat(),
+            "completed_at": task.completed_at.isoformat() if task.completed_at else "",
+            "error": task.error_message,
+            "output_file": task.metrics.get("output_file") if task.metrics else None,
+            "quality_report": task.metrics.get("quality_report") if task.metrics else None
+        })
+    return result
 
 @app.get("/tasks/{task_id}")
-async def get_task_status(task_id: str):
-    """Get status of a specific task"""
-    if task_id not in generation_tasks:
+async def get_task_status(task_id: str, _: None = Depends(api_rate_limit)):
+    """Get status of a specific task from database"""
+    task = task_manager.get_task(task_id)
+    if not task:
         raise HTTPException(status_code=404, detail="Task not found")
     
-    return generation_tasks[task_id]
+    return {
+        "task_id": task.task_id,
+        "id": task.task_id,
+        "status": task.status,
+        "progress": task.progress,
+        "created_at": task.created_at.isoformat(),
+        "completed_at": task.completed_at.isoformat() if task.completed_at else "",
+        "error": task.error_message,
+        "output_file": task.metrics.get("output_file") if task.metrics else None,
+        "quality_report": task.metrics.get("quality_report") if task.metrics else None
+    }
 
 @app.get("/tasks/{task_id}/status")
-async def get_task_status_with_suffix(task_id: str):
-    """Get status of a specific task with /status suffix"""
-    if task_id not in generation_tasks:
+async def get_task_status_with_suffix(task_id: str, _: None = Depends(api_rate_limit)):
+    """Get status of a specific task with /status suffix from database"""
+    task = task_manager.get_task(task_id)
+    if not task:
         raise HTTPException(status_code=404, detail="Task not found")
-    
-    task = generation_tasks[task_id]
     
     # Return standardized format that frontend expects
     return {
         "task_id": task_id,
-        "status": task.get("status", "unknown"),
-        "progress": task.get("progress", 0),
-        "created_at": task.get("created_at", ""),
-        "completed_at": task.get("completed_at", ""),
-        "error": task.get("error", None),
-        "output_file": task.get("output_file", None),
-        "quality_report": task.get("quality_report", None)
+        "status": task.status,
+        "progress": task.progress,
+        "created_at": task.created_at.isoformat(),
+        "completed_at": task.completed_at.isoformat() if task.completed_at else "",
+        "error": task.error_message,
+        "output_file": task.metrics.get("output_file") if task.metrics else None,
+        "quality_report": task.metrics.get("quality_report") if task.metrics else None
     }
 
 @app.delete("/tasks/{task_id}")
-async def cancel_task(task_id: str):
-    """Cancel a generation task"""
-    if task_id not in generation_tasks:
+async def cancel_task(task_id: str, _: None = Depends(api_rate_limit)):
+    """Cancel a generation task in database"""
+    task = task_manager.get_task(task_id)
+    if not task:
         raise HTTPException(status_code=404, detail="Task not found")
     
-    task = generation_tasks[task_id]
-    if task["status"] in ["queued", "processing"]:
-        task["status"] = "cancelled"
+    if task.status in ["pending", "running"]:
+        task_manager.update_task_status(task_id, "cancelled")
         return {"message": "Task cancelled successfully"}
     else:
         return {"message": "Task cannot be cancelled"}
@@ -715,7 +856,7 @@ async def health_check():
     return {"status": "healthy", "message": "SynData API is running"}
 
 @app.get("/download/{task_id}")
-async def download_file(task_id: str):
+async def download_file(task_id: str, _: None = Depends(api_rate_limit)):
     """Download the generated synthetic data file"""
     if task_id not in generation_tasks:
         raise HTTPException(status_code=404, detail="Task not found")
@@ -729,7 +870,7 @@ async def download_file(task_id: str):
     return FileResponse(output_file, filename=os.path.basename(output_file))
 
 @app.get("/download/report/{task_id}")
-async def download_report(task_id: str):
+async def download_report(task_id: str, _: None = Depends(api_rate_limit)):
     """Download the quality report for a task"""
     if task_id not in generation_tasks:
         raise HTTPException(status_code=404, detail="Task not found")
@@ -743,7 +884,7 @@ async def download_report(task_id: str):
     return JSONResponse(content=quality_report)
 
 @app.get("/debug/task/{task_id}")
-async def debug_task(task_id: str):
+async def debug_task(task_id: str, _: None = Depends(api_rate_limit)):
     """Debug endpoint to check task status"""
     task = generation_tasks.get(task_id)
     if not task:
@@ -766,7 +907,7 @@ async def debug_task(task_id: str):
     }
 
 @app.get("/debug/all-tasks")
-async def debug_all_tasks():
+async def debug_all_tasks(_: None = Depends(api_rate_limit)):
     """Debug endpoint to list all tasks and basic env info"""
     try:
         uploads_exist = os.path.exists("uploads")
@@ -786,7 +927,8 @@ async def debug_all_tasks():
 async def generate_synthetic_endpoint(
     file: UploadFile = File(...),
     rows: int = Form(100),
-    target_column: str = Form(None)
+    target_column: str = Form(None),
+    _: None = Depends(generation_rate_limit)
 ):
     """Generate synthetic data from uploaded CSV"""
     try:
